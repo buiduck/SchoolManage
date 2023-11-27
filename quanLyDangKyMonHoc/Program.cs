@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using quanLyDangKyMonHoc.View;
 using quanLyDangKyMonHoc.View.Admin;
+using quanLyDangKyMonHoc.View.User;
 
 namespace quanLyDangKyMonHoc
 {
@@ -18,7 +19,7 @@ namespace quanLyDangKyMonHoc
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormHome() );
+            Application.Run(new FormStudent() );
         }
     }
 }

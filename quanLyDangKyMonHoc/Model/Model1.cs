@@ -20,7 +20,6 @@ namespace quanLyDangKyMonHoc.Model
         public virtual DbSet<SINHVIEN> SINHVIENs { get; set; }
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<TAIKHOAN> TAIKHOANs { get; set; }
-        public virtual DbSet<Temp> Temps { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

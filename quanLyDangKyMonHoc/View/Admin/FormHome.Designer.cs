@@ -61,7 +61,7 @@
             this.panelAction.Location = new System.Drawing.Point(0, 0);
             this.panelAction.Name = "panelAction";
             this.panelAction.ShowBorders = true;
-            this.panelAction.Size = new System.Drawing.Size(200, 634);
+            this.panelAction.Size = new System.Drawing.Size(221, 753);
             this.panelAction.TabIndex = 0;
             // 
             // btnLogOut
@@ -468,7 +468,7 @@
             this.btnSubjectManager.IdleIconLeftImage = global::quanLyDangKyMonHoc.Properties.Resources.Untitled;
             this.btnSubjectManager.IdleIconRightImage = null;
             this.btnSubjectManager.IndicateFocus = false;
-            this.btnSubjectManager.Location = new System.Drawing.Point(3, 108);
+            this.btnSubjectManager.Location = new System.Drawing.Point(3, 93);
             this.btnSubjectManager.Name = "btnSubjectManager";
             this.btnSubjectManager.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnSubjectManager.OnDisabledState.BorderRadius = 1;
@@ -523,14 +523,14 @@
             this.panelMain.Location = new System.Drawing.Point(0, 0);
             this.panelMain.Name = "panelMain";
             this.panelMain.ShowBorders = true;
-            this.panelMain.Size = new System.Drawing.Size(1131, 634);
+            this.panelMain.Size = new System.Drawing.Size(1482, 753);
             this.panelMain.TabIndex = 1;
             // 
             // FormHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1131, 634);
+            this.ClientSize = new System.Drawing.Size(1482, 753);
             this.Controls.Add(this.panelAction);
             this.Controls.Add(this.panelMain);
             this.Name = "FormHome";
