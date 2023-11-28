@@ -12,11 +12,10 @@ namespace quanLyDangKyMonHoc.Model
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public SINHVIEN()
         {
-            LOPHOCPHANs = new HashSet<LOPHOCPHAN>();
+            LOPHOCPHAN = new HashSet<LOPHOCPHAN>();
         }
 
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int MASV { get; set; }
 
         [StringLength(30)]
@@ -42,6 +41,6 @@ namespace quanLyDangKyMonHoc.Model
         public virtual LOP LOP { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<LOPHOCPHAN> LOPHOCPHANs { get; set; }
+        public virtual ICollection<LOPHOCPHAN> LOPHOCPHAN { get; set; }
     }
 }

@@ -31,11 +31,11 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormStudent));
             Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges3 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges4 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges3 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges4 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -44,17 +44,17 @@
             this.btnDangXuat = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
             this.btnThoat = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
             this.panelMain = new Bunifu.UI.WinForms.BunifuPanel();
+            this.tableChuaDangKy = new Bunifu.UI.WinForms.BunifuDataGridView();
             this.btnHuyDangKy = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
             this.btnDangKy = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
             this.tableDangKy = new Bunifu.UI.WinForms.BunifuDataGridView();
-            this.tableChuaDangKy = new Bunifu.UI.WinForms.BunifuDataGridView();
             this.ddMonHoc = new Bunifu.UI.WinForms.BunifuDropdown();
             this.bunifuLabel2 = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuLabel1 = new Bunifu.UI.WinForms.BunifuLabel();
             this.panelAction.SuspendLayout();
             this.panelMain.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tableDangKy)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tableChuaDangKy)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tableDangKy)).BeginInit();
             this.SuspendLayout();
             // 
             // panelInfo
@@ -74,7 +74,7 @@
             // 
             // panelAction
             // 
-            this.panelAction.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.panelAction.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(55)))), ((int)(((byte)(136)))));
             this.panelAction.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelAction.BackgroundImage")));
             this.panelAction.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panelAction.BorderColor = System.Drawing.Color.Black;
@@ -87,7 +87,7 @@
             this.panelAction.Name = "panelAction";
             this.panelAction.Padding = new System.Windows.Forms.Padding(2);
             this.panelAction.ShowBorders = true;
-            this.panelAction.Size = new System.Drawing.Size(252, 753);
+            this.panelAction.Size = new System.Drawing.Size(300, 753);
             this.panelAction.TabIndex = 0;
             // 
             // btnDangXuat
@@ -101,7 +101,7 @@
             this.btnDangXuat.AutoSizeLeftIcon = true;
             this.btnDangXuat.AutoSizeRightIcon = true;
             this.btnDangXuat.BackColor = System.Drawing.Color.Transparent;
-            this.btnDangXuat.BackColor1 = System.Drawing.Color.DodgerBlue;
+            this.btnDangXuat.BackColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(55)))), ((int)(((byte)(136)))));
             this.btnDangXuat.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDangXuat.BackgroundImage")));
             this.btnDangXuat.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderStyles.Solid;
             this.btnDangXuat.ButtonText = "Đăng Xuất";
@@ -118,6 +118,7 @@
             this.btnDangXuat.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnDangXuat.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
             this.btnDangXuat.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.btnDangXuat.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btnDangXuat.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.ButtonStates.Pressed;
             this.btnDangXuat.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnDangXuat.ForeColor = System.Drawing.Color.White;
@@ -130,14 +131,14 @@
             this.btnDangXuat.IconRightCursor = System.Windows.Forms.Cursors.Default;
             this.btnDangXuat.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
             this.btnDangXuat.IconSize = 25;
-            this.btnDangXuat.IdleBorderColor = System.Drawing.Color.DodgerBlue;
+            this.btnDangXuat.IdleBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(55)))), ((int)(((byte)(136)))));
             this.btnDangXuat.IdleBorderRadius = 1;
             this.btnDangXuat.IdleBorderThickness = 1;
-            this.btnDangXuat.IdleFillColor = System.Drawing.Color.DodgerBlue;
+            this.btnDangXuat.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(55)))), ((int)(((byte)(136)))));
             this.btnDangXuat.IdleIconLeftImage = null;
             this.btnDangXuat.IdleIconRightImage = null;
             this.btnDangXuat.IndicateFocus = false;
-            this.btnDangXuat.Location = new System.Drawing.Point(12, 682);
+            this.btnDangXuat.Location = new System.Drawing.Point(2, 671);
             this.btnDangXuat.Name = "btnDangXuat";
             this.btnDangXuat.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnDangXuat.OnDisabledState.BorderRadius = 1;
@@ -155,11 +156,11 @@
             this.btnDangXuat.onHoverState.ForeColor = System.Drawing.Color.White;
             this.btnDangXuat.onHoverState.IconLeftImage = null;
             this.btnDangXuat.onHoverState.IconRightImage = null;
-            this.btnDangXuat.OnIdleState.BorderColor = System.Drawing.Color.DodgerBlue;
+            this.btnDangXuat.OnIdleState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(55)))), ((int)(((byte)(136)))));
             this.btnDangXuat.OnIdleState.BorderRadius = 1;
             this.btnDangXuat.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderStyles.Solid;
             this.btnDangXuat.OnIdleState.BorderThickness = 1;
-            this.btnDangXuat.OnIdleState.FillColor = System.Drawing.Color.DodgerBlue;
+            this.btnDangXuat.OnIdleState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(55)))), ((int)(((byte)(136)))));
             this.btnDangXuat.OnIdleState.ForeColor = System.Drawing.Color.White;
             this.btnDangXuat.OnIdleState.IconLeftImage = null;
             this.btnDangXuat.OnIdleState.IconRightImage = null;
@@ -171,7 +172,7 @@
             this.btnDangXuat.OnPressedState.ForeColor = System.Drawing.Color.White;
             this.btnDangXuat.OnPressedState.IconLeftImage = null;
             this.btnDangXuat.OnPressedState.IconRightImage = null;
-            this.btnDangXuat.Size = new System.Drawing.Size(197, 59);
+            this.btnDangXuat.Size = new System.Drawing.Size(296, 80);
             this.btnDangXuat.TabIndex = 1;
             this.btnDangXuat.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnDangXuat.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
@@ -190,7 +191,7 @@
             this.btnThoat.AutoSizeLeftIcon = true;
             this.btnThoat.AutoSizeRightIcon = true;
             this.btnThoat.BackColor = System.Drawing.Color.Transparent;
-            this.btnThoat.BackColor1 = System.Drawing.Color.MidnightBlue;
+            this.btnThoat.BackColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(55)))), ((int)(((byte)(136)))));
             this.btnThoat.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnThoat.BackgroundImage")));
             this.btnThoat.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderStyles.Solid;
             this.btnThoat.ButtonText = "Thoát";
@@ -207,6 +208,7 @@
             this.btnThoat.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnThoat.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
             this.btnThoat.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.btnThoat.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnThoat.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.ButtonStates.Pressed;
             this.btnThoat.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnThoat.ForeColor = System.Drawing.Color.White;
@@ -219,14 +221,14 @@
             this.btnThoat.IconRightCursor = System.Windows.Forms.Cursors.Default;
             this.btnThoat.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
             this.btnThoat.IconSize = 25;
-            this.btnThoat.IdleBorderColor = System.Drawing.Color.DodgerBlue;
+            this.btnThoat.IdleBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(55)))), ((int)(((byte)(136)))));
             this.btnThoat.IdleBorderRadius = 1;
             this.btnThoat.IdleBorderThickness = 1;
-            this.btnThoat.IdleFillColor = System.Drawing.Color.MidnightBlue;
+            this.btnThoat.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(55)))), ((int)(((byte)(136)))));
             this.btnThoat.IdleIconLeftImage = ((System.Drawing.Image)(resources.GetObject("btnThoat.IdleIconLeftImage")));
             this.btnThoat.IdleIconRightImage = null;
             this.btnThoat.IndicateFocus = true;
-            this.btnThoat.Location = new System.Drawing.Point(3, 13);
+            this.btnThoat.Location = new System.Drawing.Point(2, 2);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnThoat.OnDisabledState.BorderRadius = 1;
@@ -244,11 +246,11 @@
             this.btnThoat.onHoverState.ForeColor = System.Drawing.Color.White;
             this.btnThoat.onHoverState.IconLeftImage = null;
             this.btnThoat.onHoverState.IconRightImage = null;
-            this.btnThoat.OnIdleState.BorderColor = System.Drawing.Color.DodgerBlue;
+            this.btnThoat.OnIdleState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(55)))), ((int)(((byte)(136)))));
             this.btnThoat.OnIdleState.BorderRadius = 1;
             this.btnThoat.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderStyles.Solid;
             this.btnThoat.OnIdleState.BorderThickness = 1;
-            this.btnThoat.OnIdleState.FillColor = System.Drawing.Color.MidnightBlue;
+            this.btnThoat.OnIdleState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(55)))), ((int)(((byte)(136)))));
             this.btnThoat.OnIdleState.ForeColor = System.Drawing.Color.White;
             this.btnThoat.OnIdleState.IconLeftImage = ((System.Drawing.Image)(resources.GetObject("btnThoat.OnIdleState.IconLeftImage")));
             this.btnThoat.OnIdleState.IconRightImage = null;
@@ -260,7 +262,7 @@
             this.btnThoat.OnPressedState.ForeColor = System.Drawing.Color.White;
             this.btnThoat.OnPressedState.IconLeftImage = null;
             this.btnThoat.OnPressedState.IconRightImage = null;
-            this.btnThoat.Size = new System.Drawing.Size(244, 58);
+            this.btnThoat.Size = new System.Drawing.Size(296, 82);
             this.btnThoat.TabIndex = 0;
             this.btnThoat.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnThoat.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
@@ -276,10 +278,10 @@
             this.panelMain.BorderColor = System.Drawing.Color.Transparent;
             this.panelMain.BorderRadius = 3;
             this.panelMain.BorderThickness = 1;
+            this.panelMain.Controls.Add(this.tableChuaDangKy);
             this.panelMain.Controls.Add(this.btnHuyDangKy);
             this.panelMain.Controls.Add(this.btnDangKy);
             this.panelMain.Controls.Add(this.tableDangKy);
-            this.panelMain.Controls.Add(this.tableChuaDangKy);
             this.panelMain.Controls.Add(this.ddMonHoc);
             this.panelMain.Controls.Add(this.bunifuLabel2);
             this.panelMain.Controls.Add(this.bunifuLabel1);
@@ -290,6 +292,66 @@
             this.panelMain.Size = new System.Drawing.Size(1482, 753);
             this.panelMain.TabIndex = 1;
             this.panelMain.Click += new System.EventHandler(this.panelMain_Click);
+            // 
+            // tableChuaDangKy
+            // 
+            this.tableChuaDangKy.AllowCustomTheming = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            this.tableChuaDangKy.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.tableChuaDangKy.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.tableChuaDangKy.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tableChuaDangKy.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.tableChuaDangKy.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(115)))), ((int)(((byte)(204)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tableChuaDangKy.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.tableChuaDangKy.ColumnHeadersHeight = 40;
+            this.tableChuaDangKy.CurrentTheme.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
+            this.tableChuaDangKy.CurrentTheme.AlternatingRowsStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.tableChuaDangKy.CurrentTheme.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Black;
+            this.tableChuaDangKy.CurrentTheme.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
+            this.tableChuaDangKy.CurrentTheme.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Black;
+            this.tableChuaDangKy.CurrentTheme.BackColor = System.Drawing.Color.White;
+            this.tableChuaDangKy.CurrentTheme.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
+            this.tableChuaDangKy.CurrentTheme.HeaderStyle.BackColor = System.Drawing.Color.DodgerBlue;
+            this.tableChuaDangKy.CurrentTheme.HeaderStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
+            this.tableChuaDangKy.CurrentTheme.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.tableChuaDangKy.CurrentTheme.HeaderStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(115)))), ((int)(((byte)(204)))));
+            this.tableChuaDangKy.CurrentTheme.HeaderStyle.SelectionForeColor = System.Drawing.Color.White;
+            this.tableChuaDangKy.CurrentTheme.Name = null;
+            this.tableChuaDangKy.CurrentTheme.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.tableChuaDangKy.CurrentTheme.RowsStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.tableChuaDangKy.CurrentTheme.RowsStyle.ForeColor = System.Drawing.Color.Black;
+            this.tableChuaDangKy.CurrentTheme.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
+            this.tableChuaDangKy.CurrentTheme.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.tableChuaDangKy.DefaultCellStyle = dataGridViewCellStyle3;
+            this.tableChuaDangKy.EnableHeadersVisualStyles = false;
+            this.tableChuaDangKy.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
+            this.tableChuaDangKy.HeaderBackColor = System.Drawing.Color.DodgerBlue;
+            this.tableChuaDangKy.HeaderBgColor = System.Drawing.Color.Empty;
+            this.tableChuaDangKy.HeaderForeColor = System.Drawing.Color.White;
+            this.tableChuaDangKy.Location = new System.Drawing.Point(287, 156);
+            this.tableChuaDangKy.Name = "tableChuaDangKy";
+            this.tableChuaDangKy.RowHeadersVisible = false;
+            this.tableChuaDangKy.RowHeadersWidth = 51;
+            this.tableChuaDangKy.RowTemplate.Height = 40;
+            this.tableChuaDangKy.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.tableChuaDangKy.Size = new System.Drawing.Size(998, 295);
+            this.tableChuaDangKy.TabIndex = 4;
+            this.tableChuaDangKy.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light;
             // 
             // btnHuyDangKy
             // 
@@ -472,21 +534,21 @@
             // tableDangKy
             // 
             this.tableDangKy.AllowCustomTheming = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            this.tableDangKy.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            this.tableDangKy.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.tableDangKy.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.tableDangKy.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tableDangKy.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.tableDangKy.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(115)))), ((int)(((byte)(204)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.tableDangKy.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(115)))), ((int)(((byte)(204)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tableDangKy.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.tableDangKy.ColumnHeadersHeight = 40;
             this.tableDangKy.CurrentTheme.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
             this.tableDangKy.CurrentTheme.AlternatingRowsStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
@@ -506,14 +568,14 @@
             this.tableDangKy.CurrentTheme.RowsStyle.ForeColor = System.Drawing.Color.Black;
             this.tableDangKy.CurrentTheme.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
             this.tableDangKy.CurrentTheme.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.tableDangKy.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.tableDangKy.DefaultCellStyle = dataGridViewCellStyle6;
             this.tableDangKy.EnableHeadersVisualStyles = false;
             this.tableDangKy.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
             this.tableDangKy.HeaderBackColor = System.Drawing.Color.DodgerBlue;
@@ -528,66 +590,6 @@
             this.tableDangKy.Size = new System.Drawing.Size(998, 167);
             this.tableDangKy.TabIndex = 5;
             this.tableDangKy.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light;
-            // 
-            // tableChuaDangKy
-            // 
-            this.tableChuaDangKy.AllowCustomTheming = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            this.tableChuaDangKy.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
-            this.tableChuaDangKy.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.tableChuaDangKy.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tableChuaDangKy.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.tableChuaDangKy.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(115)))), ((int)(((byte)(204)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.tableChuaDangKy.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            this.tableChuaDangKy.ColumnHeadersHeight = 40;
-            this.tableChuaDangKy.CurrentTheme.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
-            this.tableChuaDangKy.CurrentTheme.AlternatingRowsStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.tableChuaDangKy.CurrentTheme.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Black;
-            this.tableChuaDangKy.CurrentTheme.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
-            this.tableChuaDangKy.CurrentTheme.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Black;
-            this.tableChuaDangKy.CurrentTheme.BackColor = System.Drawing.Color.White;
-            this.tableChuaDangKy.CurrentTheme.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
-            this.tableChuaDangKy.CurrentTheme.HeaderStyle.BackColor = System.Drawing.Color.DodgerBlue;
-            this.tableChuaDangKy.CurrentTheme.HeaderStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
-            this.tableChuaDangKy.CurrentTheme.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.tableChuaDangKy.CurrentTheme.HeaderStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(115)))), ((int)(((byte)(204)))));
-            this.tableChuaDangKy.CurrentTheme.HeaderStyle.SelectionForeColor = System.Drawing.Color.White;
-            this.tableChuaDangKy.CurrentTheme.Name = null;
-            this.tableChuaDangKy.CurrentTheme.RowsStyle.BackColor = System.Drawing.Color.White;
-            this.tableChuaDangKy.CurrentTheme.RowsStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.tableChuaDangKy.CurrentTheme.RowsStyle.ForeColor = System.Drawing.Color.Black;
-            this.tableChuaDangKy.CurrentTheme.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
-            this.tableChuaDangKy.CurrentTheme.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.tableChuaDangKy.DefaultCellStyle = dataGridViewCellStyle6;
-            this.tableChuaDangKy.EnableHeadersVisualStyles = false;
-            this.tableChuaDangKy.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
-            this.tableChuaDangKy.HeaderBackColor = System.Drawing.Color.DodgerBlue;
-            this.tableChuaDangKy.HeaderBgColor = System.Drawing.Color.Empty;
-            this.tableChuaDangKy.HeaderForeColor = System.Drawing.Color.White;
-            this.tableChuaDangKy.Location = new System.Drawing.Point(278, 127);
-            this.tableChuaDangKy.Name = "tableChuaDangKy";
-            this.tableChuaDangKy.RowHeadersVisible = false;
-            this.tableChuaDangKy.RowHeadersWidth = 51;
-            this.tableChuaDangKy.RowTemplate.Height = 40;
-            this.tableChuaDangKy.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.tableChuaDangKy.Size = new System.Drawing.Size(998, 327);
-            this.tableChuaDangKy.TabIndex = 4;
-            this.tableChuaDangKy.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light;
             // 
             // ddMonHoc
             // 
@@ -678,8 +680,8 @@
             this.panelAction.ResumeLayout(false);
             this.panelMain.ResumeLayout(false);
             this.panelMain.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tableDangKy)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tableChuaDangKy)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tableDangKy)).EndInit();
             this.ResumeLayout(false);
 
         }

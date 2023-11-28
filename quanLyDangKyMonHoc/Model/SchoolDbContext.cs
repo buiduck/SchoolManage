@@ -5,21 +5,22 @@ using System.Linq;
 
 namespace quanLyDangKyMonHoc.Model
 {
-    public partial class Model1 : DbContext
+    public partial class SchoolDbContext : DbContext
     {
-        public Model1()
-            : base("name=DBContext")
+        public SchoolDbContext()
+            : base("name=SchoolDbContext")
         {
         }
 
-        public virtual DbSet<GIANGVIEN> GIANGVIENs { get; set; }
-        public virtual DbSet<LOP> LOPs { get; set; }
-        public virtual DbSet<LOPHOCPHAN> LOPHOCPHANs { get; set; }
-        public virtual DbSet<MONHOC> MONHOCs { get; set; }
-        public virtual DbSet<NGANH> NGANHs { get; set; }
-        public virtual DbSet<SINHVIEN> SINHVIENs { get; set; }
-        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
-        public virtual DbSet<TAIKHOAN> TAIKHOANs { get; set; }
+        public virtual DbSet<GIANGVIEN> GIANGVIEN { get; set; }
+        public virtual DbSet<LOP> LOP { get; set; }
+        public virtual DbSet<LOPHOCPHAN> LOPHOCPHAN { get; set; }
+        public virtual DbSet<MONHOC> MONHOC { get; set; }
+        public virtual DbSet<NGANH> NGANH { get; set; }
+        public virtual DbSet<SINHVIEN> SINHVIEN { get; set; }
+        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
+        public virtual DbSet<TAIKHOAN> TAIKHOAN { get; set; }
+        public virtual DbSet<Temp> Temp { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -36,8 +37,8 @@ namespace quanLyDangKyMonHoc.Model
                 .IsFixedLength();
 
             modelBuilder.Entity<LOPHOCPHAN>()
-                .HasMany(e => e.SINHVIENs)
-                .WithMany(e => e.LOPHOCPHANs)
+                .HasMany(e => e.SINHVIEN)
+                .WithMany(e => e.LOPHOCPHAN)
                 .Map(m => m.ToTable("ctLopHocPhanAndSinhVien").MapLeftKey("MALOPHP").MapRightKey("MASV"));
 
             modelBuilder.Entity<SINHVIEN>()

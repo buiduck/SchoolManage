@@ -6,7 +6,7 @@ namespace quanLyDangKyMonHoc.Model
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class sysdiagram
+    public partial class sysdiagrams
     {
         [Required]
         [StringLength(128)]

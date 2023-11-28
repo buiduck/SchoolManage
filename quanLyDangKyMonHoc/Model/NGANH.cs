@@ -12,7 +12,7 @@ namespace quanLyDangKyMonHoc.Model
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public NGANH()
         {
-            LOPs = new HashSet<LOP>();
+            LOP = new HashSet<LOP>();
         }
 
         [Key]
@@ -22,6 +22,6 @@ namespace quanLyDangKyMonHoc.Model
         public string TENNGANH { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<LOP> LOPs { get; set; }
+        public virtual ICollection<LOP> LOP { get; set; }
     }
 }

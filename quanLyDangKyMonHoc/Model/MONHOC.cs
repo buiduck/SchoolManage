@@ -12,7 +12,7 @@ namespace quanLyDangKyMonHoc.Model
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public MONHOC()
         {
-            LOPHOCPHANs = new HashSet<LOPHOCPHAN>();
+            LOPHOCPHAN = new HashSet<LOPHOCPHAN>();
         }
 
         [Key]
@@ -27,6 +27,6 @@ namespace quanLyDangKyMonHoc.Model
         public string LOAIMH { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<LOPHOCPHAN> LOPHOCPHANs { get; set; }
+        public virtual ICollection<LOPHOCPHAN> LOPHOCPHAN { get; set; }
     }
 }
