@@ -44,12 +44,12 @@
             this.btnDangXuat = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
             this.btnThoat = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
             this.panelMain = new Bunifu.UI.WinForms.BunifuPanel();
+            this.label1 = new System.Windows.Forms.Label();
             this.tableChuaDangKy = new Bunifu.UI.WinForms.BunifuDataGridView();
             this.btnHuyDangKy = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
             this.btnDangKy = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
             this.tableDangKy = new Bunifu.UI.WinForms.BunifuDataGridView();
             this.ddMonHoc = new Bunifu.UI.WinForms.BunifuDropdown();
-            this.bunifuLabel2 = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuLabel1 = new Bunifu.UI.WinForms.BunifuLabel();
             this.panelAction.SuspendLayout();
             this.panelMain.SuspendLayout();
@@ -120,7 +120,7 @@
             this.btnDangXuat.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
             this.btnDangXuat.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btnDangXuat.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.ButtonStates.Pressed;
-            this.btnDangXuat.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnDangXuat.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDangXuat.ForeColor = System.Drawing.Color.White;
             this.btnDangXuat.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDangXuat.IconLeftCursor = System.Windows.Forms.Cursors.Default;
@@ -135,7 +135,7 @@
             this.btnDangXuat.IdleBorderRadius = 1;
             this.btnDangXuat.IdleBorderThickness = 1;
             this.btnDangXuat.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(55)))), ((int)(((byte)(136)))));
-            this.btnDangXuat.IdleIconLeftImage = null;
+            this.btnDangXuat.IdleIconLeftImage = ((System.Drawing.Image)(resources.GetObject("btnDangXuat.IdleIconLeftImage")));
             this.btnDangXuat.IdleIconRightImage = null;
             this.btnDangXuat.IndicateFocus = false;
             this.btnDangXuat.Location = new System.Drawing.Point(2, 671);
@@ -148,11 +148,11 @@
             this.btnDangXuat.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
             this.btnDangXuat.OnDisabledState.IconLeftImage = null;
             this.btnDangXuat.OnDisabledState.IconRightImage = null;
-            this.btnDangXuat.onHoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.btnDangXuat.onHoverState.BorderColor = System.Drawing.Color.Red;
             this.btnDangXuat.onHoverState.BorderRadius = 1;
             this.btnDangXuat.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderStyles.Solid;
             this.btnDangXuat.onHoverState.BorderThickness = 1;
-            this.btnDangXuat.onHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.btnDangXuat.onHoverState.FillColor = System.Drawing.Color.Red;
             this.btnDangXuat.onHoverState.ForeColor = System.Drawing.Color.White;
             this.btnDangXuat.onHoverState.IconLeftImage = null;
             this.btnDangXuat.onHoverState.IconRightImage = null;
@@ -162,7 +162,7 @@
             this.btnDangXuat.OnIdleState.BorderThickness = 1;
             this.btnDangXuat.OnIdleState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(55)))), ((int)(((byte)(136)))));
             this.btnDangXuat.OnIdleState.ForeColor = System.Drawing.Color.White;
-            this.btnDangXuat.OnIdleState.IconLeftImage = null;
+            this.btnDangXuat.OnIdleState.IconLeftImage = ((System.Drawing.Image)(resources.GetObject("btnDangXuat.OnIdleState.IconLeftImage")));
             this.btnDangXuat.OnIdleState.IconRightImage = null;
             this.btnDangXuat.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
             this.btnDangXuat.OnPressedState.BorderRadius = 1;
@@ -210,7 +210,7 @@
             this.btnThoat.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
             this.btnThoat.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnThoat.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.ButtonStates.Pressed;
-            this.btnThoat.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnThoat.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThoat.ForeColor = System.Drawing.Color.White;
             this.btnThoat.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnThoat.IconLeftCursor = System.Windows.Forms.Cursors.Default;
@@ -278,12 +278,12 @@
             this.panelMain.BorderColor = System.Drawing.Color.Transparent;
             this.panelMain.BorderRadius = 3;
             this.panelMain.BorderThickness = 1;
+            this.panelMain.Controls.Add(this.label1);
             this.panelMain.Controls.Add(this.tableChuaDangKy);
             this.panelMain.Controls.Add(this.btnHuyDangKy);
             this.panelMain.Controls.Add(this.btnDangKy);
             this.panelMain.Controls.Add(this.tableDangKy);
             this.panelMain.Controls.Add(this.ddMonHoc);
-            this.panelMain.Controls.Add(this.bunifuLabel2);
             this.panelMain.Controls.Add(this.bunifuLabel1);
             this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelMain.Location = new System.Drawing.Point(0, 0);
@@ -292,6 +292,16 @@
             this.panelMain.Size = new System.Drawing.Size(1482, 753);
             this.panelMain.TabIndex = 1;
             this.panelMain.Click += new System.EventHandler(this.panelMain_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(481, 95);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(125, 32);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Môn Học";
             // 
             // tableChuaDangKy
             // 
@@ -343,13 +353,13 @@
             this.tableChuaDangKy.HeaderBackColor = System.Drawing.Color.DodgerBlue;
             this.tableChuaDangKy.HeaderBgColor = System.Drawing.Color.Empty;
             this.tableChuaDangKy.HeaderForeColor = System.Drawing.Color.White;
-            this.tableChuaDangKy.Location = new System.Drawing.Point(287, 156);
+            this.tableChuaDangKy.Location = new System.Drawing.Point(325, 146);
             this.tableChuaDangKy.Name = "tableChuaDangKy";
             this.tableChuaDangKy.RowHeadersVisible = false;
             this.tableChuaDangKy.RowHeadersWidth = 51;
             this.tableChuaDangKy.RowTemplate.Height = 40;
             this.tableChuaDangKy.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.tableChuaDangKy.Size = new System.Drawing.Size(998, 295);
+            this.tableChuaDangKy.Size = new System.Drawing.Size(937, 295);
             this.tableChuaDangKy.TabIndex = 4;
             this.tableChuaDangKy.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light;
             // 
@@ -489,7 +499,7 @@
             this.btnDangKy.IdleIconLeftImage = null;
             this.btnDangKy.IdleIconRightImage = null;
             this.btnDangKy.IndicateFocus = false;
-            this.btnDangKy.Location = new System.Drawing.Point(691, 473);
+            this.btnDangKy.Location = new System.Drawing.Point(719, 459);
             this.btnDangKy.Name = "btnDangKy";
             this.btnDangKy.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnDangKy.OnDisabledState.BorderRadius = 1;
@@ -581,13 +591,13 @@
             this.tableDangKy.HeaderBackColor = System.Drawing.Color.DodgerBlue;
             this.tableDangKy.HeaderBgColor = System.Drawing.Color.Empty;
             this.tableDangKy.HeaderForeColor = System.Drawing.Color.White;
-            this.tableDangKy.Location = new System.Drawing.Point(278, 535);
+            this.tableDangKy.Location = new System.Drawing.Point(306, 518);
             this.tableDangKy.Name = "tableDangKy";
             this.tableDangKy.RowHeadersVisible = false;
             this.tableDangKy.RowHeadersWidth = 51;
             this.tableDangKy.RowTemplate.Height = 40;
             this.tableDangKy.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.tableDangKy.Size = new System.Drawing.Size(998, 167);
+            this.tableDangKy.Size = new System.Drawing.Size(956, 167);
             this.tableDangKy.TabIndex = 5;
             this.tableDangKy.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light;
             // 
@@ -635,22 +645,6 @@
             this.ddMonHoc.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
             this.ddMonHoc.TextLeftMargin = 5;
             // 
-            // bunifuLabel2
-            // 
-            this.bunifuLabel2.AllowParentOverrides = false;
-            this.bunifuLabel2.AutoEllipsis = false;
-            this.bunifuLabel2.Cursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel2.CursorType = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel2.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.bunifuLabel2.Location = new System.Drawing.Point(507, 89);
-            this.bunifuLabel2.Name = "bunifuLabel2";
-            this.bunifuLabel2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel2.Size = new System.Drawing.Size(86, 20);
-            this.bunifuLabel2.TabIndex = 2;
-            this.bunifuLabel2.Text = "bunifuLabel2";
-            this.bunifuLabel2.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.bunifuLabel2.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            // 
             // bunifuLabel1
             // 
             this.bunifuLabel1.AllowParentOverrides = false;
@@ -696,9 +690,9 @@
         private Bunifu.UI.WinForms.BunifuDataGridView tableDangKy;
         private Bunifu.UI.WinForms.BunifuDataGridView tableChuaDangKy;
         private Bunifu.UI.WinForms.BunifuDropdown ddMonHoc;
-        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel2;
         private Bunifu.UI.WinForms.BunifuLabel bunifuLabel1;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton2 btnDangXuat;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton2 btnThoat;
+        private System.Windows.Forms.Label label1;
     }
 }

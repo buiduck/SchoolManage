@@ -8,7 +8,13 @@ namespace quanLyDangKyMonHoc.Model
 {
     internal class ChuaDangKy
     {
-        private string tenlop;
-        
+        public string id { get; set; }
+        public string tenlop { get; set; }
+        public string tenMonHoc { get; set; }
+        public string tenGV { get; set; }
+
+        public int soTiet { get; set; }
+        public string soluong { get; set; }
+
     }
 }

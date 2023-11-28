@@ -17,23 +17,12 @@ namespace quanLyDangKyMonHoc.View.User
         public FormStudent()
         {
             InitializeComponent();
-            //var listLopChuaDangKy = SchoolDBConText.Database.SqlQuery<LOPHOCPHAN>("select * from lophocphan").ToList();
-            //    .Select(x=> new
-            //{
-            //    x.MALOPHP,
-            //    x.TENLOP,
-            //    TenGiangVien = x.GIANGVIEN.TEN,  // Đổi tên trường để tránh lỗi NotSupportedException
-            //    TenMonHoc = x.MONHOC.TENMH,
-            //    x.SOLUONGSV,
-            //    x.NGAYBD,
-            //    x.NGAYKT
-            //}).ToList();
+            var listlopchuadangky = SchoolDBConText.LOPHOCPHAN.Where(x=>x.SINHVIEN.Select(y=>y.MASV)!='1')ToList();
 
-            var test = SchoolDBConText.LOPHOCPHAN.Where(
-                x => x.SINHVIEN.All(y => y.MASV != 1) && x.MONHOC.MAMH==2
-                ).ToList();
 
-            tableChuaDangKy.DataSource = test;
+
+
+            tableChuaDangKy.DataSource = listlopchuadangky;
         }
 
         private void panelMain_Click(object sender, EventArgs e)
@@ -46,5 +35,7 @@ namespace quanLyDangKyMonHoc.View.User
             var test = SchoolDBConText.LOPHOCPHAN.ToList();
             tableChuaDangKy.DataSource=test;
         }
+
+       
     }
 }
