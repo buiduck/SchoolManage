@@ -121,7 +121,7 @@ namespace quanLyDangKyMonHoc.View.User
 
         private void btnDangKy_Click(object sender, EventArgs e)
         {
-            S
+            
         }
 
       

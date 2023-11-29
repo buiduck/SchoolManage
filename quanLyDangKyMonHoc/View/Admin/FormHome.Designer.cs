@@ -30,15 +30,16 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormHome));
             Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges3 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges4 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges5 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges6 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
             this.panelAction = new Bunifu.UI.WinForms.BunifuPanel();
             this.panelBottom = new System.Windows.Forms.Panel();
             this.btnLogout = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.btnQLTK = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
             this.btnSubjectManager = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
             this.btnSudentManager = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
             this.btnClassManager = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
@@ -46,7 +47,6 @@
             this.panelTop = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelMain = new Bunifu.UI.WinForms.BunifuPanel();
-            this.btnQLTK = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
             this.panelAction.SuspendLayout();
             this.panelBottom.SuspendLayout();
             this.panelMenu.SuspendLayout();
@@ -56,8 +56,6 @@
             // 
             // panelAction
             // 
-            this.panelAction.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.panelAction.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(55)))), ((int)(((byte)(136)))));
             this.panelAction.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelAction.BackgroundImage")));
             this.panelAction.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -67,10 +65,11 @@
             this.panelAction.Controls.Add(this.panelBottom);
             this.panelAction.Controls.Add(this.panelMenu);
             this.panelAction.Controls.Add(this.panelTop);
+            this.panelAction.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelAction.Location = new System.Drawing.Point(0, 0);
             this.panelAction.Name = "panelAction";
             this.panelAction.ShowBorders = true;
-            this.panelAction.Size = new System.Drawing.Size(300, 753);
+            this.panelAction.Size = new System.Drawing.Size(356, 753);
             this.panelAction.TabIndex = 0;
             // 
             // panelBottom
@@ -80,7 +79,7 @@
             this.panelBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panelBottom.Location = new System.Drawing.Point(0, 670);
             this.panelBottom.Name = "panelBottom";
-            this.panelBottom.Size = new System.Drawing.Size(300, 83);
+            this.panelBottom.Size = new System.Drawing.Size(356, 83);
             this.panelBottom.TabIndex = 0;
             // 
             // btnLogout
@@ -165,7 +164,7 @@
             this.btnLogout.OnPressedState.ForeColor = System.Drawing.Color.White;
             this.btnLogout.OnPressedState.IconLeftImage = null;
             this.btnLogout.OnPressedState.IconRightImage = null;
-            this.btnLogout.Size = new System.Drawing.Size(300, 83);
+            this.btnLogout.Size = new System.Drawing.Size(356, 83);
             this.btnLogout.TabIndex = 0;
             this.btnLogout.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnLogout.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
@@ -175,18 +174,107 @@
             // 
             // panelMenu
             // 
-            this.panelMenu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(55)))), ((int)(((byte)(136)))));
             this.panelMenu.Controls.Add(this.btnQLTK);
             this.panelMenu.Controls.Add(this.btnSubjectManager);
             this.panelMenu.Controls.Add(this.btnSudentManager);
             this.panelMenu.Controls.Add(this.btnClassManager);
             this.panelMenu.Controls.Add(this.btnRegisterSubject);
+            this.panelMenu.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelMenu.Location = new System.Drawing.Point(0, 133);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(300, 620);
+            this.panelMenu.Size = new System.Drawing.Size(356, 620);
             this.panelMenu.TabIndex = 9;
+            // 
+            // btnQLTK
+            // 
+            this.btnQLTK.AllowAnimations = true;
+            this.btnQLTK.AllowMouseEffects = true;
+            this.btnQLTK.AllowToggling = false;
+            this.btnQLTK.AnimationSpeed = 200;
+            this.btnQLTK.AutoGenerateColors = false;
+            this.btnQLTK.AutoRoundBorders = false;
+            this.btnQLTK.AutoSizeLeftIcon = true;
+            this.btnQLTK.AutoSizeRightIcon = true;
+            this.btnQLTK.BackColor = System.Drawing.Color.Transparent;
+            this.btnQLTK.BackColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(55)))), ((int)(((byte)(136)))));
+            this.btnQLTK.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnQLTK.BackgroundImage")));
+            this.btnQLTK.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderStyles.Solid;
+            this.btnQLTK.ButtonText = "Quản lý tài khoản";
+            this.btnQLTK.ButtonTextMarginLeft = 0;
+            this.btnQLTK.ColorContrastOnClick = 45;
+            this.btnQLTK.ColorContrastOnHover = 45;
+            this.btnQLTK.Cursor = System.Windows.Forms.Cursors.Default;
+            borderEdges2.BottomLeft = true;
+            borderEdges2.BottomRight = true;
+            borderEdges2.TopLeft = true;
+            borderEdges2.TopRight = true;
+            this.btnQLTK.CustomizableEdges = borderEdges2;
+            this.btnQLTK.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnQLTK.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.btnQLTK.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.btnQLTK.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.btnQLTK.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnQLTK.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.ButtonStates.Pressed;
+            this.btnQLTK.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnQLTK.ForeColor = System.Drawing.Color.White;
+            this.btnQLTK.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnQLTK.IconLeftCursor = System.Windows.Forms.Cursors.Default;
+            this.btnQLTK.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
+            this.btnQLTK.IconMarginLeft = 11;
+            this.btnQLTK.IconPadding = 10;
+            this.btnQLTK.IconRightAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnQLTK.IconRightCursor = System.Windows.Forms.Cursors.Default;
+            this.btnQLTK.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
+            this.btnQLTK.IconSize = 25;
+            this.btnQLTK.IdleBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(55)))), ((int)(((byte)(136)))));
+            this.btnQLTK.IdleBorderRadius = 1;
+            this.btnQLTK.IdleBorderThickness = 1;
+            this.btnQLTK.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(55)))), ((int)(((byte)(136)))));
+            this.btnQLTK.IdleIconLeftImage = ((System.Drawing.Image)(resources.GetObject("btnQLTK.IdleIconLeftImage")));
+            this.btnQLTK.IdleIconRightImage = null;
+            this.btnQLTK.IndicateFocus = false;
+            this.btnQLTK.Location = new System.Drawing.Point(0, 280);
+            this.btnQLTK.Name = "btnQLTK";
+            this.btnQLTK.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.btnQLTK.OnDisabledState.BorderRadius = 1;
+            this.btnQLTK.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderStyles.Solid;
+            this.btnQLTK.OnDisabledState.BorderThickness = 1;
+            this.btnQLTK.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.btnQLTK.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.btnQLTK.OnDisabledState.IconLeftImage = null;
+            this.btnQLTK.OnDisabledState.IconRightImage = null;
+            this.btnQLTK.onHoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.btnQLTK.onHoverState.BorderRadius = 1;
+            this.btnQLTK.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderStyles.Solid;
+            this.btnQLTK.onHoverState.BorderThickness = 1;
+            this.btnQLTK.onHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.btnQLTK.onHoverState.ForeColor = System.Drawing.Color.White;
+            this.btnQLTK.onHoverState.IconLeftImage = null;
+            this.btnQLTK.onHoverState.IconRightImage = null;
+            this.btnQLTK.OnIdleState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(55)))), ((int)(((byte)(136)))));
+            this.btnQLTK.OnIdleState.BorderRadius = 1;
+            this.btnQLTK.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderStyles.Solid;
+            this.btnQLTK.OnIdleState.BorderThickness = 1;
+            this.btnQLTK.OnIdleState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(55)))), ((int)(((byte)(136)))));
+            this.btnQLTK.OnIdleState.ForeColor = System.Drawing.Color.White;
+            this.btnQLTK.OnIdleState.IconLeftImage = ((System.Drawing.Image)(resources.GetObject("btnQLTK.OnIdleState.IconLeftImage")));
+            this.btnQLTK.OnIdleState.IconRightImage = null;
+            this.btnQLTK.OnPressedState.BorderColor = System.Drawing.Color.SeaGreen;
+            this.btnQLTK.OnPressedState.BorderRadius = 1;
+            this.btnQLTK.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderStyles.Solid;
+            this.btnQLTK.OnPressedState.BorderThickness = 1;
+            this.btnQLTK.OnPressedState.FillColor = System.Drawing.Color.SeaGreen;
+            this.btnQLTK.OnPressedState.ForeColor = System.Drawing.Color.White;
+            this.btnQLTK.OnPressedState.IconLeftImage = null;
+            this.btnQLTK.OnPressedState.IconRightImage = null;
+            this.btnQLTK.Size = new System.Drawing.Size(356, 70);
+            this.btnQLTK.TabIndex = 6;
+            this.btnQLTK.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnQLTK.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnQLTK.TextMarginLeft = 0;
+            this.btnQLTK.TextPadding = new System.Windows.Forms.Padding(0);
+            this.btnQLTK.UseDefaultRadiusAndThickness = true;
             // 
             // btnSubjectManager
             // 
@@ -270,7 +358,7 @@
             this.btnSubjectManager.OnPressedState.ForeColor = System.Drawing.Color.White;
             this.btnSubjectManager.OnPressedState.IconLeftImage = null;
             this.btnSubjectManager.OnPressedState.IconRightImage = null;
-            this.btnSubjectManager.Size = new System.Drawing.Size(300, 70);
+            this.btnSubjectManager.Size = new System.Drawing.Size(356, 70);
             this.btnSubjectManager.TabIndex = 2;
             this.btnSubjectManager.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnSubjectManager.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
@@ -361,7 +449,7 @@
             this.btnSudentManager.OnPressedState.ForeColor = System.Drawing.Color.White;
             this.btnSudentManager.OnPressedState.IconLeftImage = null;
             this.btnSudentManager.OnPressedState.IconRightImage = null;
-            this.btnSudentManager.Size = new System.Drawing.Size(300, 70);
+            this.btnSudentManager.Size = new System.Drawing.Size(356, 70);
             this.btnSudentManager.TabIndex = 3;
             this.btnSudentManager.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnSudentManager.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
@@ -452,7 +540,7 @@
             this.btnClassManager.OnPressedState.ForeColor = System.Drawing.Color.White;
             this.btnClassManager.OnPressedState.IconLeftImage = null;
             this.btnClassManager.OnPressedState.IconRightImage = null;
-            this.btnClassManager.Size = new System.Drawing.Size(300, 70);
+            this.btnClassManager.Size = new System.Drawing.Size(356, 70);
             this.btnClassManager.TabIndex = 4;
             this.btnClassManager.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnClassManager.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
@@ -542,7 +630,7 @@
             this.btnRegisterSubject.OnPressedState.ForeColor = System.Drawing.Color.White;
             this.btnRegisterSubject.OnPressedState.IconLeftImage = null;
             this.btnRegisterSubject.OnPressedState.IconRightImage = null;
-            this.btnRegisterSubject.Size = new System.Drawing.Size(300, 70);
+            this.btnRegisterSubject.Size = new System.Drawing.Size(356, 70);
             this.btnRegisterSubject.TabIndex = 5;
             this.btnRegisterSubject.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnRegisterSubject.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
@@ -557,7 +645,7 @@
             this.panelTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTop.Location = new System.Drawing.Point(0, 0);
             this.panelTop.Name = "panelTop";
-            this.panelTop.Size = new System.Drawing.Size(300, 133);
+            this.panelTop.Size = new System.Drawing.Size(356, 133);
             this.panelTop.TabIndex = 8;
             // 
             // pictureBox1
@@ -567,122 +655,32 @@
             this.pictureBox1.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.ErrorImage")));
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
-            this.pictureBox1.Location = new System.Drawing.Point(76, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(115, 12);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(133, 105);
+            this.pictureBox1.Size = new System.Drawing.Size(103, 105);
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
             // 
             // panelMain
             // 
-            this.panelMain.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panelMain.BackgroundColor = System.Drawing.Color.Transparent;
             this.panelMain.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelMain.BackgroundImage")));
             this.panelMain.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panelMain.BorderColor = System.Drawing.Color.Transparent;
             this.panelMain.BorderRadius = 3;
             this.panelMain.BorderThickness = 1;
-            this.panelMain.Location = new System.Drawing.Point(0, 0);
+            this.panelMain.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panelMain.Location = new System.Drawing.Point(356, 0);
             this.panelMain.Name = "panelMain";
             this.panelMain.ShowBorders = true;
-            this.panelMain.Size = new System.Drawing.Size(1482, 753);
+            this.panelMain.Size = new System.Drawing.Size(1326, 753);
             this.panelMain.TabIndex = 1;
-            // 
-            // btnQLTK
-            // 
-            this.btnQLTK.AllowAnimations = true;
-            this.btnQLTK.AllowMouseEffects = true;
-            this.btnQLTK.AllowToggling = false;
-            this.btnQLTK.AnimationSpeed = 200;
-            this.btnQLTK.AutoGenerateColors = false;
-            this.btnQLTK.AutoRoundBorders = false;
-            this.btnQLTK.AutoSizeLeftIcon = true;
-            this.btnQLTK.AutoSizeRightIcon = true;
-            this.btnQLTK.BackColor = System.Drawing.Color.Transparent;
-            this.btnQLTK.BackColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(55)))), ((int)(((byte)(136)))));
-            this.btnQLTK.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnQLTK.BackgroundImage")));
-            this.btnQLTK.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderStyles.Solid;
-            this.btnQLTK.ButtonText = "Quản lý tài khoản";
-            this.btnQLTK.ButtonTextMarginLeft = 0;
-            this.btnQLTK.ColorContrastOnClick = 45;
-            this.btnQLTK.ColorContrastOnHover = 45;
-            this.btnQLTK.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges2.BottomLeft = true;
-            borderEdges2.BottomRight = true;
-            borderEdges2.TopLeft = true;
-            borderEdges2.TopRight = true;
-            this.btnQLTK.CustomizableEdges = borderEdges2;
-            this.btnQLTK.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnQLTK.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.btnQLTK.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.btnQLTK.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
-            this.btnQLTK.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnQLTK.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.ButtonStates.Pressed;
-            this.btnQLTK.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnQLTK.ForeColor = System.Drawing.Color.White;
-            this.btnQLTK.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnQLTK.IconLeftCursor = System.Windows.Forms.Cursors.Default;
-            this.btnQLTK.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
-            this.btnQLTK.IconMarginLeft = 11;
-            this.btnQLTK.IconPadding = 10;
-            this.btnQLTK.IconRightAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnQLTK.IconRightCursor = System.Windows.Forms.Cursors.Default;
-            this.btnQLTK.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
-            this.btnQLTK.IconSize = 25;
-            this.btnQLTK.IdleBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(55)))), ((int)(((byte)(136)))));
-            this.btnQLTK.IdleBorderRadius = 1;
-            this.btnQLTK.IdleBorderThickness = 1;
-            this.btnQLTK.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(55)))), ((int)(((byte)(136)))));
-            this.btnQLTK.IdleIconLeftImage = ((System.Drawing.Image)(resources.GetObject("btnQLTK.IdleIconLeftImage")));
-            this.btnQLTK.IdleIconRightImage = null;
-            this.btnQLTK.IndicateFocus = false;
-            this.btnQLTK.Location = new System.Drawing.Point(0, 280);
-            this.btnQLTK.Name = "btnQLTK";
-            this.btnQLTK.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.btnQLTK.OnDisabledState.BorderRadius = 1;
-            this.btnQLTK.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderStyles.Solid;
-            this.btnQLTK.OnDisabledState.BorderThickness = 1;
-            this.btnQLTK.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.btnQLTK.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
-            this.btnQLTK.OnDisabledState.IconLeftImage = null;
-            this.btnQLTK.OnDisabledState.IconRightImage = null;
-            this.btnQLTK.onHoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            this.btnQLTK.onHoverState.BorderRadius = 1;
-            this.btnQLTK.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderStyles.Solid;
-            this.btnQLTK.onHoverState.BorderThickness = 1;
-            this.btnQLTK.onHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            this.btnQLTK.onHoverState.ForeColor = System.Drawing.Color.White;
-            this.btnQLTK.onHoverState.IconLeftImage = null;
-            this.btnQLTK.onHoverState.IconRightImage = null;
-            this.btnQLTK.OnIdleState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(55)))), ((int)(((byte)(136)))));
-            this.btnQLTK.OnIdleState.BorderRadius = 1;
-            this.btnQLTK.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderStyles.Solid;
-            this.btnQLTK.OnIdleState.BorderThickness = 1;
-            this.btnQLTK.OnIdleState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(55)))), ((int)(((byte)(136)))));
-            this.btnQLTK.OnIdleState.ForeColor = System.Drawing.Color.White;
-            this.btnQLTK.OnIdleState.IconLeftImage = ((System.Drawing.Image)(resources.GetObject("btnQLTK.OnIdleState.IconLeftImage")));
-            this.btnQLTK.OnIdleState.IconRightImage = null;
-            this.btnQLTK.OnPressedState.BorderColor = System.Drawing.Color.SeaGreen;
-            this.btnQLTK.OnPressedState.BorderRadius = 1;
-            this.btnQLTK.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderStyles.Solid;
-            this.btnQLTK.OnPressedState.BorderThickness = 1;
-            this.btnQLTK.OnPressedState.FillColor = System.Drawing.Color.SeaGreen;
-            this.btnQLTK.OnPressedState.ForeColor = System.Drawing.Color.White;
-            this.btnQLTK.OnPressedState.IconLeftImage = null;
-            this.btnQLTK.OnPressedState.IconRightImage = null;
-            this.btnQLTK.Size = new System.Drawing.Size(300, 70);
-            this.btnQLTK.TabIndex = 6;
-            this.btnQLTK.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnQLTK.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
-            this.btnQLTK.TextMarginLeft = 0;
-            this.btnQLTK.TextPadding = new System.Windows.Forms.Padding(0);
-            this.btnQLTK.UseDefaultRadiusAndThickness = true;
             // 
             // FormHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1482, 753);
+            this.ClientSize = new System.Drawing.Size(1682, 753);
             this.Controls.Add(this.panelAction);
             this.Controls.Add(this.panelMain);
             this.Name = "FormHome";

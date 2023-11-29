@@ -293,7 +293,7 @@
             this.panelMain.ShowBorders = true;
             this.panelMain.Size = new System.Drawing.Size(1482, 753);
             this.panelMain.TabIndex = 1;
-            this.panelMain.Click += new System.EventHandler(this.panelMain_Click);
+            //this.panelMain.Click += new System.EventHandler(this.panelMain_Click);
             // 
             // lbtest
             // 
