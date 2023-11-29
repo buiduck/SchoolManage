@@ -44,6 +44,7 @@
             this.btnDangXuat = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
             this.btnThoat = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
             this.panelMain = new Bunifu.UI.WinForms.BunifuPanel();
+            this.lbtest = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tableChuaDangKy = new Bunifu.UI.WinForms.BunifuDataGridView();
             this.btnHuyDangKy = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
@@ -278,6 +279,7 @@
             this.panelMain.BorderColor = System.Drawing.Color.Transparent;
             this.panelMain.BorderRadius = 3;
             this.panelMain.BorderThickness = 1;
+            this.panelMain.Controls.Add(this.lbtest);
             this.panelMain.Controls.Add(this.label1);
             this.panelMain.Controls.Add(this.tableChuaDangKy);
             this.panelMain.Controls.Add(this.btnHuyDangKy);
@@ -292,6 +294,14 @@
             this.panelMain.Size = new System.Drawing.Size(1482, 753);
             this.panelMain.TabIndex = 1;
             this.panelMain.Click += new System.EventHandler(this.panelMain_Click);
+            // 
+            // lbtest
+            // 
+            this.lbtest.AutoSize = true;
+            this.lbtest.Location = new System.Drawing.Point(963, 470);
+            this.lbtest.Name = "lbtest";
+            this.lbtest.Size = new System.Drawing.Size(0, 16);
+            this.lbtest.TabIndex = 9;
             // 
             // label1
             // 
@@ -353,15 +363,17 @@
             this.tableChuaDangKy.HeaderBackColor = System.Drawing.Color.DodgerBlue;
             this.tableChuaDangKy.HeaderBgColor = System.Drawing.Color.Empty;
             this.tableChuaDangKy.HeaderForeColor = System.Drawing.Color.White;
-            this.tableChuaDangKy.Location = new System.Drawing.Point(325, 146);
+            this.tableChuaDangKy.Location = new System.Drawing.Point(306, 141);
             this.tableChuaDangKy.Name = "tableChuaDangKy";
             this.tableChuaDangKy.RowHeadersVisible = false;
             this.tableChuaDangKy.RowHeadersWidth = 51;
             this.tableChuaDangKy.RowTemplate.Height = 40;
             this.tableChuaDangKy.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.tableChuaDangKy.Size = new System.Drawing.Size(937, 295);
+            this.tableChuaDangKy.Size = new System.Drawing.Size(975, 234);
             this.tableChuaDangKy.TabIndex = 4;
             this.tableChuaDangKy.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light;
+            this.tableChuaDangKy.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tableChuaDangKy_CellClick);
+            this.tableChuaDangKy.Click += new System.EventHandler(this.tableChuaDangKy_Click);
             // 
             // btnHuyDangKy
             // 
@@ -410,7 +422,7 @@
             this.btnHuyDangKy.IdleIconLeftImage = null;
             this.btnHuyDangKy.IdleIconRightImage = null;
             this.btnHuyDangKy.IndicateFocus = false;
-            this.btnHuyDangKy.Location = new System.Drawing.Point(694, 708);
+            this.btnHuyDangKy.Location = new System.Drawing.Point(703, 691);
             this.btnHuyDangKy.Name = "btnHuyDangKy";
             this.btnHuyDangKy.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnHuyDangKy.OnDisabledState.BorderRadius = 1;
@@ -499,7 +511,7 @@
             this.btnDangKy.IdleIconLeftImage = null;
             this.btnDangKy.IdleIconRightImage = null;
             this.btnDangKy.IndicateFocus = false;
-            this.btnDangKy.Location = new System.Drawing.Point(719, 459);
+            this.btnDangKy.Location = new System.Drawing.Point(703, 410);
             this.btnDangKy.Name = "btnDangKy";
             this.btnDangKy.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnDangKy.OnDisabledState.BorderRadius = 1;
@@ -540,6 +552,7 @@
             this.btnDangKy.TextMarginLeft = 0;
             this.btnDangKy.TextPadding = new System.Windows.Forms.Padding(0);
             this.btnDangKy.UseDefaultRadiusAndThickness = true;
+            this.btnDangKy.Click += new System.EventHandler(this.btnDangKy_Click);
             // 
             // tableDangKy
             // 
@@ -591,13 +604,13 @@
             this.tableDangKy.HeaderBackColor = System.Drawing.Color.DodgerBlue;
             this.tableDangKy.HeaderBgColor = System.Drawing.Color.Empty;
             this.tableDangKy.HeaderForeColor = System.Drawing.Color.White;
-            this.tableDangKy.Location = new System.Drawing.Point(306, 518);
+            this.tableDangKy.Location = new System.Drawing.Point(306, 470);
             this.tableDangKy.Name = "tableDangKy";
             this.tableDangKy.RowHeadersVisible = false;
             this.tableDangKy.RowHeadersWidth = 51;
             this.tableDangKy.RowTemplate.Height = 40;
             this.tableDangKy.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.tableDangKy.Size = new System.Drawing.Size(956, 167);
+            this.tableDangKy.Size = new System.Drawing.Size(975, 198);
             this.tableDangKy.TabIndex = 5;
             this.tableDangKy.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light;
             // 
@@ -644,6 +657,8 @@
             this.ddMonHoc.Text = null;
             this.ddMonHoc.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
             this.ddMonHoc.TextLeftMargin = 5;
+            this.ddMonHoc.SelectedIndexChanged += new System.EventHandler(this.ddMonHoc_SelectedIndexChanged);
+            this.ddMonHoc.SelectedValueChanged += new System.EventHandler(this.ddMonHoc_SelectedValueChanged);
             // 
             // bunifuLabel1
             // 
@@ -694,5 +709,6 @@
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton2 btnDangXuat;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton2 btnThoat;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbtest;
     }
 }

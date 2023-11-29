@@ -35,10 +35,15 @@ namespace quanLyDangKyMonHoc.Model
 
         public int? MALOP { get; set; }
 
-        [StringLength(150)]
-        public string MATKHAU { get; set; }
+        [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
+        [StringLength(61)]
+        public string TENDAYDU { get; set; }
+
+        public int? TAIKHOANID { get; set; }
 
         public virtual LOP LOP { get; set; }
+
+        public virtual TAIKHOANS TAIKHOANS { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<LOPHOCPHAN> LOPHOCPHAN { get; set; }

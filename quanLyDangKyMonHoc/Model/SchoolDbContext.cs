@@ -12,6 +12,7 @@ namespace quanLyDangKyMonHoc.Model
         {
         }
 
+        public virtual DbSet<ADMIN> ADMIN { get; set; }
         public virtual DbSet<GIANGVIEN> GIANGVIEN { get; set; }
         public virtual DbSet<LOP> LOP { get; set; }
         public virtual DbSet<LOPHOCPHAN> LOPHOCPHAN { get; set; }
@@ -19,11 +20,14 @@ namespace quanLyDangKyMonHoc.Model
         public virtual DbSet<NGANH> NGANH { get; set; }
         public virtual DbSet<SINHVIEN> SINHVIEN { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
-        public virtual DbSet<TAIKHOAN> TAIKHOAN { get; set; }
-        public virtual DbSet<Temp> Temp { get; set; }
+        public virtual DbSet<TAIKHOANS> TAIKHOANS { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<ADMIN>()
+                .Property(e => e.email)
+                .IsUnicode(false);
+
             modelBuilder.Entity<GIANGVIEN>()
                 .Property(e => e.SDT)
                 .IsFixedLength();
@@ -45,17 +49,23 @@ namespace quanLyDangKyMonHoc.Model
                 .Property(e => e.EMAIL)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<SINHVIEN>()
-                .Property(e => e.MATKHAU)
+            modelBuilder.Entity<TAIKHOANS>()
+                .Property(e => e.username)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<TAIKHOAN>()
-                .Property(e => e.TENTAIKHOAN)
+            modelBuilder.Entity<TAIKHOANS>()
+                .Property(e => e.password)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<TAIKHOAN>()
-                .Property(e => e.MATKHAU)
-                .IsUnicode(false);
+            modelBuilder.Entity<TAIKHOANS>()
+                .HasMany(e => e.ADMIN)
+                .WithOptional(e => e.TAIKHOANS)
+                .HasForeignKey(e => e.taikhoanid);
+
+            modelBuilder.Entity<TAIKHOANS>()
+                .HasMany(e => e.SINHVIEN)
+                .WithOptional(e => e.TAIKHOANS)
+                .HasForeignKey(e => e.TAIKHOANID);
         }
     }
 }

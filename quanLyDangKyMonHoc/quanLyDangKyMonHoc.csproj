@@ -59,7 +59,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Model\ChuaDangKy.cs" />
+    <Compile Include="Model\ADMIN.cs" />
     <Compile Include="Model\GIANGVIEN.cs" />
     <Compile Include="Model\LOP.cs" />
     <Compile Include="Model\LOPHOCPHAN.cs" />
@@ -68,8 +68,7 @@
     <Compile Include="Model\SchoolDbContext.cs" />
     <Compile Include="Model\SINHVIEN.cs" />
     <Compile Include="Model\sysdiagrams.cs" />
-    <Compile Include="Model\TAIKHOAN.cs" />
-    <Compile Include="Model\Temp.cs" />
+    <Compile Include="Model\TAIKHOANS.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="View\Admin\FormHome.cs">
