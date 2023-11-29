@@ -293,7 +293,6 @@
             this.panelMain.ShowBorders = true;
             this.panelMain.Size = new System.Drawing.Size(1482, 753);
             this.panelMain.TabIndex = 1;
-            //this.panelMain.Click += new System.EventHandler(this.panelMain_Click);
             // 
             // lbtest
             // 
@@ -686,6 +685,7 @@
             this.Controls.Add(this.panelMain);
             this.Name = "FormStudent";
             this.Text = "FormStudent";
+           
             this.panelAction.ResumeLayout(false);
             this.panelMain.ResumeLayout(false);
             this.panelMain.PerformLayout();

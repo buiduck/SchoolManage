@@ -547,6 +547,7 @@
             this.btnClassManager.TextMarginLeft = 0;
             this.btnClassManager.TextPadding = new System.Windows.Forms.Padding(0);
             this.btnClassManager.UseDefaultRadiusAndThickness = true;
+            this.btnClassManager.Click += new System.EventHandler(this.btnClassManager_Click_1);
             // 
             // btnRegisterSubject
             // 
@@ -685,6 +686,7 @@
             this.Controls.Add(this.panelMain);
             this.Name = "FormHome";
             this.Text = "FormHome";
+            this.Load += new System.EventHandler(this.FormHome_Load);
             this.panelAction.ResumeLayout(false);
             this.panelBottom.ResumeLayout(false);
             this.panelMenu.ResumeLayout(false);

@@ -18,7 +18,7 @@ namespace quanLyDangKyMonHoc.View.Admin
         {
             InitializeComponent();
             LoadData();
-            var listSelectGV = schoolDbContext.GIANGVIENs.Select(
+            var listSelectGV = schoolDbContext.GIANGVIEN.Select(
                 x => new
                 {
                     Value = x.MAGV,
@@ -33,7 +33,7 @@ namespace quanLyDangKyMonHoc.View.Admin
         }
         private void LoadData()
         {
-            var list = schoolDbContext.LOPHOCPHANs
+            var list = schoolDbContext.LOPHOCPHAN
                .Select(x => new {
                    x.TENLOP,
                    ten = x.GIANGVIEN.HODEM + " " + x.GIANGVIEN.TEN,
@@ -52,7 +52,7 @@ namespace quanLyDangKyMonHoc.View.Admin
             if (r >= 0)
             {
                 DataGridViewRow row = tbDanhsachlh.Rows[r];
-                txtMalop.Text = row.Cells[0].Value.ToString();
+                
                 txtTenlop.Text = row.Cells[1].Value.ToString();
                 txtSoluongsv.Text = row.Cells[3].Value.ToString();
 
@@ -115,7 +115,7 @@ namespace quanLyDangKyMonHoc.View.Admin
                     MAGV = maGV,
                     MAMH = maMH
                 };
-                schoolDbContext.LOPHOCPHANs.Add(lopMoi);
+                schoolDbContext.LOPHOCPHAN.Add(lopMoi);
                 schoolDbContext.SaveChanges();
                 MessageBox.Show("Thêm lớp học thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 LoadData();
@@ -135,7 +135,7 @@ namespace quanLyDangKyMonHoc.View.Admin
                     // Lấy mã lớp học của hàng được chọn
                     int maLopHoc = Convert.ToInt32(tbDanhsachlh.SelectedRows[0].Cells["MALOPHP"].Value);
                     // Tìm lớp học trong cơ sở dữ liệu
-                    var lopHoc = schoolDbContext.LOPHOCPHANs.Find(maLopHoc);
+                    var lopHoc = schoolDbContext.LOPHOCPHAN.Find(maLopHoc);
                     // Lấy thông tin từ các điều khiển
                     string tenLop = txtTenlop.Text;
                     DateTime ngayBD = DPNgaybd.Value;
@@ -181,11 +181,11 @@ namespace quanLyDangKyMonHoc.View.Admin
                         // Lấy mã lớp học của hàng được chọn
                         int maLopHoc = Convert.ToInt32(tbDanhsachlh.SelectedRows[0].Cells["MALOPHP"].Value);
                         // Tìm lớp học trong cơ sở dữ liệu
-                        var lopHoc = schoolDbContext.LOPHOCPHANs.Find(maLopHoc);
+                        var lopHoc = schoolDbContext.LOPHOCPHAN.Find(maLopHoc);
                         var result = MessageBox.Show("Bạn có chắc chắn muốn xóa lớp học này?", "Xác nhận xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                         if (result == DialogResult.Yes)
                         {                
-                            schoolDbContext.LOPHOCPHANs.Remove(lopHoc);
+                            schoolDbContext.LOPHOCPHAN.Remove(lopHoc);
                             schoolDbContext.SaveChanges();                       
                             MessageBox.Show("Xóa lớp học thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             LoadData();
@@ -223,7 +223,7 @@ namespace quanLyDangKyMonHoc.View.Admin
             }
 
             // Tìm kiếm lớp theo mã
-            var lop = schoolDbContext.LOPHOCPHANs.FirstOrDefault(l => l.MALOPHP.ToString() == maLop);
+            var lop = schoolDbContext.LOPHOCPHAN.FirstOrDefault(l => l.MALOPHP.ToString() == maLop);
 
             if (lop != null)
             {
@@ -246,6 +246,11 @@ namespace quanLyDangKyMonHoc.View.Admin
             txtSoluongsv.Text = lop.SOLUONGSV.ToString();
             DPNgaybd.Value = DateTime.ParseExact(lop.NGAYBD, "yyyy-MM-dd", null);
             DPNgaykt.Value = DateTime.ParseExact(lop.NGAYKT, "yyyy-MM-dd", null);
+        }
+
+        private void bunifuGroupBox2_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

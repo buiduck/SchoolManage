@@ -19,6 +19,7 @@ namespace quanLyDangKyMonHoc.View.Admin
         public FormHome()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
 
         private void btnSudentManager_Click(object sender, EventArgs e)
@@ -82,8 +83,14 @@ namespace quanLyDangKyMonHoc.View.Admin
                 ucClassManager.BringToFront();
             }
         }
+        
 
-        private void btnClassManager_Click(object sender, EventArgs e)
+        private void FormHome_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnClassManager_Click_1(object sender, EventArgs e)
         {
             LoadUcAction2();
         }
