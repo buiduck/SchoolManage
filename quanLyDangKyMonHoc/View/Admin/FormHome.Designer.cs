@@ -57,11 +57,11 @@
             this.panelAction.Controls.Add(this.btnClassManager);
             this.panelAction.Controls.Add(this.btnSudentManager);
             this.panelAction.Controls.Add(this.btnSubjectManager);
-            this.panelAction.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panelAction.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelAction.Location = new System.Drawing.Point(0, 0);
             this.panelAction.Name = "panelAction";
             this.panelAction.ShowBorders = true;
-            this.panelAction.Size = new System.Drawing.Size(200, 634);
+            this.panelAction.Size = new System.Drawing.Size(247, 808);
             this.panelAction.TabIndex = 0;
             // 
             // btnLogOut
@@ -519,22 +519,23 @@
             this.panelMain.BorderColor = System.Drawing.Color.Transparent;
             this.panelMain.BorderRadius = 3;
             this.panelMain.BorderThickness = 1;
-            this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelMain.Location = new System.Drawing.Point(0, 0);
+            this.panelMain.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panelMain.Location = new System.Drawing.Point(247, 0);
             this.panelMain.Name = "panelMain";
             this.panelMain.ShowBorders = true;
-            this.panelMain.Size = new System.Drawing.Size(1131, 634);
+            this.panelMain.Size = new System.Drawing.Size(1349, 808);
             this.panelMain.TabIndex = 1;
             // 
             // FormHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1131, 634);
+            this.ClientSize = new System.Drawing.Size(1596, 808);
             this.Controls.Add(this.panelAction);
             this.Controls.Add(this.panelMain);
             this.Name = "FormHome";
             this.Text = "FormHome";
+            this.Load += new System.EventHandler(this.FormHome_Load);
             this.panelAction.ResumeLayout(false);
             this.ResumeLayout(false);
 

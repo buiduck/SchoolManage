@@ -5,10 +5,10 @@ using System.Linq;
 
 namespace quanLyDangKyMonHoc.Model
 {
-    public partial class Model1 : DbContext
+    public partial class SchoolDbContext : DbContext
     {
-        public Model1()
-            : base("name=DBContext")
+        public SchoolDbContext()
+            : base("name=ConnectString")
         {
         }
 

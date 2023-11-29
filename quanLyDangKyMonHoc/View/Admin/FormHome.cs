@@ -66,5 +66,9 @@ namespace quanLyDangKyMonHoc.View.Admin
             }
         }
 
+        private void FormHome_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
