@@ -16,7 +16,6 @@ namespace quanLyDangKyMonHoc.Model
         }
 
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int MALOPHP { get; set; }
 
         [StringLength(50)]

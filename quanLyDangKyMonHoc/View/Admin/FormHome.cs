@@ -65,6 +65,27 @@ namespace quanLyDangKyMonHoc.View.Admin
                 ucSubjectManager.BringToFront();
             }
         }
+        private void LoadUcAction2()
+        {
+            if (ucClassManager == null)
+            {
+                ucClassManager = new UcClassManager();
+                {
+                    Dock = DockStyle.Fill;
+                };
+                panelMain.Controls.Add(ucClassManager);
 
+                ucClassManager.BringToFront();
+            }
+            else
+            {
+                ucClassManager.BringToFront();
+            }
+        }
+
+        private void btnClassManager_Click(object sender, EventArgs e)
+        {
+            LoadUcAction2();
+        }
     }
 }

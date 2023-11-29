@@ -16,7 +16,6 @@ namespace quanLyDangKyMonHoc.Model
         }
 
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int MASV { get; set; }
 
         [StringLength(30)]

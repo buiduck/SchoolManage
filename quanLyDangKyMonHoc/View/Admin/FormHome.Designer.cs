@@ -61,7 +61,7 @@
             this.panelAction.Location = new System.Drawing.Point(0, 0);
             this.panelAction.Name = "panelAction";
             this.panelAction.ShowBorders = true;
-            this.panelAction.Size = new System.Drawing.Size(200, 634);
+            this.panelAction.Size = new System.Drawing.Size(200, 753);
             this.panelAction.TabIndex = 0;
             // 
             // btnLogOut
@@ -330,6 +330,7 @@
             this.btnClassManager.TextMarginLeft = 0;
             this.btnClassManager.TextPadding = new System.Windows.Forms.Padding(0);
             this.btnClassManager.UseDefaultRadiusAndThickness = true;
+            this.btnClassManager.Click += new System.EventHandler(this.btnClassManager_Click);
             // 
             // btnSudentManager
             // 
@@ -523,14 +524,14 @@
             this.panelMain.Location = new System.Drawing.Point(0, 0);
             this.panelMain.Name = "panelMain";
             this.panelMain.ShowBorders = true;
-            this.panelMain.Size = new System.Drawing.Size(1131, 634);
+            this.panelMain.Size = new System.Drawing.Size(1482, 753);
             this.panelMain.TabIndex = 1;
             // 
             // FormHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1131, 634);
+            this.ClientSize = new System.Drawing.Size(1482, 753);
             this.Controls.Add(this.panelAction);
             this.Controls.Add(this.panelMain);
             this.Name = "FormHome";

@@ -33,8 +33,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Bunifu.Dataviz.WinForms">
+      <HintPath>C:\Users\ACER\Downloads\Bunifu_Dataviz_v2.2.1\Bunifu.Dataviz.WinForms.dll</HintPath>
+    </Reference>
     <Reference Include="Bunifu.UI.WinForms">
-      <HintPath>..\..\Bunifu_UI_WinForm_6.1\Bunifu.UI.WinForms.dll</HintPath>
+      <HintPath>C:\Users\ACER\Downloads\Bunifu_UI_WinForm_6.1\Bunifu.UI.WinForms.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
@@ -46,6 +49,7 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Design" />
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
@@ -62,9 +66,9 @@
     <Compile Include="Model\GIANGVIEN.cs" />
     <Compile Include="Model\LOP.cs" />
     <Compile Include="Model\LOPHOCPHAN.cs" />
-    <Compile Include="Model\Model1.cs" />
     <Compile Include="Model\MONHOC.cs" />
     <Compile Include="Model\NGANH.cs" />
+    <Compile Include="Model\SchoolDbContext.cs" />
     <Compile Include="Model\SINHVIEN.cs" />
     <Compile Include="Model\sysdiagram.cs" />
     <Compile Include="Model\TAIKHOAN.cs" />
