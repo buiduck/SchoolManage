@@ -14,22 +14,21 @@ namespace quanLyDangKyMonHoc.Repository.Implement
     {
         private readonly SchoolDbContext schoolDbContext = new SchoolDbContext();
 
-        public void Login(string username, string password)
+        public Account Login(string username, string password)
         {
-            //    try
+            //try
+            //{
+            //    var user = schoolDbContext.Account.SingleOrDefault(x => x.AccountName == username);
+
+            //    if (user != null)
             //    {
-            //        var user = schoolDbContext.Account.SingleOrDefault(x => x.AccountName == username);
+            //        string passHash = user.Password;
+            //        bool checkLogin = BCrypt.Net.BCrypt.Verify(password, passHash);
 
-            //        if (user != null)
-            //        {
-            //            string passHash = user.password;
-            //            bool checkLogin = BCrypt.Net.BCrypt.Verify(password, passHash);
-
-            //            if (checkLogin)
-            //            {
-            //                return user;
-            //            }
-            //        }
+            //        //IEnumerable<Account> Update(Account entity)
+            //        //{
+            //        //    throw new NotImplementedException();
+            //        //}
 
             //        return null;
             //    }
@@ -43,6 +42,7 @@ namespace quanLyDangKyMonHoc.Repository.Implement
             //        schoolDbContext.Dispose();
             //    }
             //}
+
             //public bool Register(Account taikhoan)
             //{
             //    try
@@ -59,22 +59,6 @@ namespace quanLyDangKyMonHoc.Repository.Implement
             //    {
             //        schoolDbContext.Dispose();
             //    }
-
-            //}
-
-            //IEnumerable<Account> Create(Account entity)
-            //{
-            //    throw new NotImplementedException();
-            //}
-
-            //IEnumerable<Account> Update(Account entity)
-            //{
-            //    throw new NotImplementedException();
-            //}
-
-            //IEnumerable<Account> Delete(int id)
-            //{
-            //    throw new NotImplementedException();
             //}
         }
     }

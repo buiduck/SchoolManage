@@ -64,37 +64,37 @@ namespace quanLyDangKyMonHoc.View.Admin
         //        setEnable(!showSetData);
         //    }
 
-        //    private void btlUpDate_Click(object sender, EventArgs e)
-        //    {
-        //        if (checkValidation())
-        //        {
-        //            SINHVIEN sv = new SINHVIEN();
-        //            sv.MASV = int.Parse(txtMasv.Text);
-        //            sv.TEN = txtName.Text;
-        //            sv.HODEM = txtTenSv.Text;
-        //            sv.QUEQUAN = txtQueQuan.Text;
-        //            sv.EMAIL = txtEmail.Text;
-        //            sv.NGAYSINH = dpNgaySinh.Value;
-        //            LOP lopSelected = cbLop.SelectedItem as LOP;
-        //            if (lopSelected != null)
-        //            {
-        //                sv.MALOP = lopSelected.MALOP;
-        //            }
-        //            try
-        //            {
-        //            studentRepository.updateStudent(sv);
-        //            dtTable.DataSource = studentRepository.getListStudentByClassId(getIsClassByNameClass(listClass, cbClassShowView.SelectedItem.ToString()));
-        //            setEnable(showSetData);
-        //            setNullDataBoxProperties();
-        //                MessageBox.Show($"Cập nhật thông tin thông tin sinh viên MSV-{sv.MASV}!!!", "Thông báo");
-        //            }
-        //            catch(Exception ex)
-        //            {
-        //                MessageBox.Show("Cập nhật thông tin thất bại !!!", "Lỗi");
-        //            }
-
-        //        }
-        //    }
+        private void btlUpDate_Click(object sender, EventArgs e)
+        {
+            if (checkValidation())
+            {
+                Student sv = new Student();
+                sv.MASV = int.Parse(txtMasv.Text);
+                sv.TEN = txtName.Text;
+                sv.HODEM = txtTenSv.Text;
+                sv.QUEQUAN = txtQueQuan.Text;
+                sv.EMAIL = txtEmail.Text;
+                sv.NGAYSINH = dpNgaySinh.Value;
+                LOP lopSelected = cbLop.SelectedItem as LOP;
+                if (lopSelected != null)
+                {
+                    sv.MALOP = lopSelected.MALOP;
+                }
+                try
+                {
+                studentRepository.updateStudent(sv);
+                dtTable.DataSource = studentRepository.getListStudentByClassId(getIsClassByNameClass(listClass, cbClassShowView.SelectedItem.ToString()));
+                setEnable(showSetData);
+                setNullDataBoxProperties();
+                    MessageBox.Show($"Cập nhật thông tin thông tin sinh viên MSV-{sv.MASV}!!!", "Thông báo");
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show("Cập nhật thông tin thất bại !!!", "Lỗi");
+                }
+                
+            }
+        }
 
         //    private void btnSearch_Click(object sender, EventArgs e)
         //    {

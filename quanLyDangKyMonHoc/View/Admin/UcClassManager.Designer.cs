@@ -277,6 +277,7 @@
             this.tbDanhsachlh.TabIndex = 0;
             this.tbDanhsachlh.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light;
             this.tbDanhsachlh.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tbDanhsachlh_CellClick);
+          
             // 
             // bunifuGroupBox4
             // 
@@ -823,6 +824,7 @@
             this.btTimkiem.TextMarginLeft = 0;
             this.btTimkiem.TextPadding = new System.Windows.Forms.Padding(0);
             this.btTimkiem.UseDefaultRadiusAndThickness = true;
+           
             // 
             // bunifuDropdown1
             // 
@@ -954,7 +956,7 @@
             this.bunifuLabel1.Location = new System.Drawing.Point(31, 39);
             this.bunifuLabel1.Name = "bunifuLabel1";
             this.bunifuLabel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel1.Size = new System.Drawing.Size(14, 4);
+            this.bunifuLabel1.Size = new System.Drawing.Size(69, 23);
             this.bunifuLabel1.TabIndex = 0;
             this.bunifuLabel1.Text = "Tìm kiếm";
             this.bunifuLabel1.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
@@ -987,7 +989,7 @@
             this.bunifuGroupBox2.TabIndex = 1;
             this.bunifuGroupBox2.TabStop = false;
             this.bunifuGroupBox2.Text = "Thông tin lớp";
-            this.bunifuGroupBox2.Enter += new System.EventHandler(this.bunifuGroupBox2_Enter);
+       
             // 
             // txtSoluongsv
             // 
@@ -1160,6 +1162,7 @@
             this.ddMaMH.Name = "ddMaMH";
             this.ddMaMH.Size = new System.Drawing.Size(296, 32);
             this.ddMaMH.TabIndex = 15;
+            this.ddMaMH.Text = null;
             this.ddMaMH.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
             this.ddMaMH.TextLeftMargin = 5;
             // 
@@ -1293,7 +1296,7 @@
             this.bunifuLabel8.Location = new System.Drawing.Point(34, 311);
             this.bunifuLabel8.Name = "bunifuLabel8";
             this.bunifuLabel8.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel8.Size = new System.Drawing.Size(19, 4);
+            this.bunifuLabel8.Size = new System.Drawing.Size(97, 23);
             this.bunifuLabel8.TabIndex = 10;
             this.bunifuLabel8.Text = "Mã môn học";
             this.bunifuLabel8.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
@@ -1309,7 +1312,7 @@
             this.bunifuLabel7.Location = new System.Drawing.Point(33, 272);
             this.bunifuLabel7.Name = "bunifuLabel7";
             this.bunifuLabel7.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel7.Size = new System.Drawing.Size(22, 4);
+            this.bunifuLabel7.Size = new System.Drawing.Size(108, 23);
             this.bunifuLabel7.TabIndex = 9;
             this.bunifuLabel7.Text = "Mã giảng viên";
             this.bunifuLabel7.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
@@ -1325,7 +1328,7 @@
             this.bunifuLabel6.Location = new System.Drawing.Point(33, 218);
             this.bunifuLabel6.Name = "bunifuLabel6";
             this.bunifuLabel6.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel6.Size = new System.Drawing.Size(19, 4);
+            this.bunifuLabel6.Size = new System.Drawing.Size(93, 23);
             this.bunifuLabel6.TabIndex = 8;
             this.bunifuLabel6.Text = "Số lượng SV";
             this.bunifuLabel6.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
@@ -1341,7 +1344,7 @@
             this.bunifuLabel5.Location = new System.Drawing.Point(34, 175);
             this.bunifuLabel5.Name = "bunifuLabel5";
             this.bunifuLabel5.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel5.Size = new System.Drawing.Size(19, 4);
+            this.bunifuLabel5.Size = new System.Drawing.Size(107, 23);
             this.bunifuLabel5.TabIndex = 7;
             this.bunifuLabel5.Text = "Ngày kết thúc";
             this.bunifuLabel5.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
@@ -1357,7 +1360,7 @@
             this.bunifuLabel4.Location = new System.Drawing.Point(34, 132);
             this.bunifuLabel4.Name = "bunifuLabel4";
             this.bunifuLabel4.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel4.Size = new System.Drawing.Size(20, 4);
+            this.bunifuLabel4.Size = new System.Drawing.Size(104, 23);
             this.bunifuLabel4.TabIndex = 6;
             this.bunifuLabel4.Text = "Ngày bắt đầu";
             this.bunifuLabel4.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
