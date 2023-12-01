@@ -10,9 +10,9 @@ namespace quanLyDangKyMonHoc.Repository.Interface
 {
     internal interface IStudentRepository
     {
-        List<StudentDTO> getListStudent();
-        List<LOP> getListClass();
-        bool updateStudent(SINHVIEN sinhvien);
-        List<StudentDTO> getListStudentByClassId(int idClass);
+        //List<StudentDTO> getListStudent();
+        //List<LOP> getListClass();
+        //bool updateStudent(SINHVIEN sinhvien);
+        //List<StudentDTO> getListStudentByClassId(int idClass);
     }
 }

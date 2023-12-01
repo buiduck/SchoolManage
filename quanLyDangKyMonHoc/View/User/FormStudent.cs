@@ -23,12 +23,19 @@ namespace quanLyDangKyMonHoc.View.User
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
+            var listkihoc = SchoolDBConText.AcademicYear.ToList();
+
+
+            ddKyhoc.DataSource = listkihoc;
+            //dd.DisplayMember = "Name";
+            //ddMonHoc.ValueMember = "Id";
+
             var listmonhoc = SchoolDBConText.Subject.ToList();
 
 
             ddMonHoc.DataSource = listmonhoc;
-            ddMonHoc.DisplayMember = "TENMH";
-            ddMonHoc.ValueMember = "MAMH";
+            ddMonHoc.DisplayMember = "Name";
+            ddMonHoc.ValueMember = "Id";
            
             FormLoad();
            
@@ -72,7 +79,7 @@ namespace quanLyDangKyMonHoc.View.User
                 .Where(x =>
                     x.Student.All(y => y.Id != Masv)
                     && x.SubjectId == Mamh
-                    && !SchoolDBConText.Student.Any(sv => sv.Id == Masv && sv.ClassSchedules.Any(lhp => lhp.Id == Mamh))
+                    && !SchoolDBConText.Student.Any(sv => sv.Id == Masv && sv.ClassSchedule.Any(lhp => lhp.Id == Mamh))
                 );
                 
                
@@ -109,7 +116,7 @@ namespace quanLyDangKyMonHoc.View.User
                 .Select(x => new
                 {
                     x.Id,
-                    x.Name,
+                    Tenlop=x.Name,
                     Ten = x.Teacher.FullName,
                     x.Subject.Name,
                     Soluong = $"{x.Student.Count()}/{x.TotalStudent}",
@@ -134,7 +141,7 @@ namespace quanLyDangKyMonHoc.View.User
             if (Student != null && ClassSchedule != null)
             {
                 // Thêm sinh viên vào lớp học phần
-                Student.ClassSchedules.Add(ClassSchedule);
+                Student.ClassSchedule.Add(ClassSchedule);
                 SchoolDBConText.SaveChanges();
                 FormLoad();
             }
@@ -167,7 +174,7 @@ namespace quanLyDangKyMonHoc.View.User
             if (Student != null && ClassSchedule != null)
             {
                 // Xóa mối quan hệ giữa sinh viên và lớp học phần
-                Student.ClassSchedules.Remove(ClassSchedule);
+                Student.ClassSchedule.Remove(ClassSchedule);
                 //ClassSchedule.Student.Remove(Student);
                 // Lưu thay đổi vào cơ sở dữ liệu
                 SchoolDBConText.SaveChanges();
@@ -194,6 +201,15 @@ namespace quanLyDangKyMonHoc.View.User
 
         }
 
-      
+        private void bunifuDropdown1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var listmonhoc = SchoolDBConText.Subject.Where().ToList();
+
+            ddMonHoc.DataSource = listmonhoc;
+            ddMonHoc.DisplayMember = "Name";
+            ddMonHoc.ValueMember = "Id";
+        }
+
+        
     }
 }
