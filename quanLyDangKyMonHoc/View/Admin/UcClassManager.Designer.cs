@@ -276,7 +276,7 @@
             this.tbDanhsachlh.Size = new System.Drawing.Size(1006, 281);
             this.tbDanhsachlh.TabIndex = 0;
             this.tbDanhsachlh.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light;
-            this.tbDanhsachlh.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tbDanhsachlh_CellClick);
+            //this.tbDanhsachlh.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tbDanhsachlh_CellClick);
           
             // 
             // bunifuGroupBox4

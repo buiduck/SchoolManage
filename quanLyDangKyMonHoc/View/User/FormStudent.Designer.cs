@@ -40,6 +40,10 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelInfo = new Bunifu.UI.WinForms.BunifuPanel();
+            this.panelInfoBottom = new Bunifu.UI.WinForms.BunifuPanel();
+            this.bunifuGroupBox2 = new Bunifu.UI.WinForms.BunifuGroupBox();
+            this.panelInfoTop = new Bunifu.UI.WinForms.BunifuPanel();
+            this.bunifuGroupBox1 = new Bunifu.UI.WinForms.BunifuGroupBox();
             this.panelAction = new Bunifu.UI.WinForms.BunifuPanel();
             this.btnDangXuat = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
             this.btnThoat = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
@@ -54,18 +58,14 @@
             this.tableDangKy = new Bunifu.UI.WinForms.BunifuDataGridView();
             this.ddMonHoc = new Bunifu.UI.WinForms.BunifuDropdown();
             this.bunifuLabel1 = new Bunifu.UI.WinForms.BunifuLabel();
-            this.panelInfoTop = new Bunifu.UI.WinForms.BunifuPanel();
-            this.panelInfoBottom = new Bunifu.UI.WinForms.BunifuPanel();
-            this.bunifuGroupBox1 = new Bunifu.UI.WinForms.BunifuGroupBox();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.bunifuGroupBox2 = new Bunifu.UI.WinForms.BunifuGroupBox();
             this.panelInfo.SuspendLayout();
+            this.panelInfoBottom.SuspendLayout();
+            this.panelInfoTop.SuspendLayout();
             this.panelAction.SuspendLayout();
             this.panelMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tableChuaDangKy)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tableDangKy)).BeginInit();
-            this.panelInfoTop.SuspendLayout();
-            this.panelInfoBottom.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelInfo
@@ -84,6 +84,72 @@
             this.panelInfo.ShowBorders = true;
             this.panelInfo.Size = new System.Drawing.Size(200, 753);
             this.panelInfo.TabIndex = 0;
+            // 
+            // panelInfoBottom
+            // 
+            this.panelInfoBottom.BackgroundColor = System.Drawing.Color.Transparent;
+            this.panelInfoBottom.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelInfoBottom.BackgroundImage")));
+            this.panelInfoBottom.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panelInfoBottom.BorderColor = System.Drawing.Color.Transparent;
+            this.panelInfoBottom.BorderRadius = 3;
+            this.panelInfoBottom.BorderThickness = 1;
+            this.panelInfoBottom.Controls.Add(this.bunifuGroupBox2);
+            this.panelInfoBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelInfoBottom.Location = new System.Drawing.Point(0, 373);
+            this.panelInfoBottom.Name = "panelInfoBottom";
+            this.panelInfoBottom.ShowBorders = true;
+            this.panelInfoBottom.Size = new System.Drawing.Size(200, 380);
+            this.panelInfoBottom.TabIndex = 0;
+            // 
+            // bunifuGroupBox2
+            // 
+            this.bunifuGroupBox2.BorderColor = System.Drawing.Color.LightGray;
+            this.bunifuGroupBox2.BorderRadius = 1;
+            this.bunifuGroupBox2.BorderThickness = 1;
+            this.bunifuGroupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.bunifuGroupBox2.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.bunifuGroupBox2.LabelAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.bunifuGroupBox2.LabelIndent = 10;
+            this.bunifuGroupBox2.LineStyle = Bunifu.UI.WinForms.BunifuGroupBox.LineStyles.Solid;
+            this.bunifuGroupBox2.Location = new System.Drawing.Point(0, 0);
+            this.bunifuGroupBox2.Name = "bunifuGroupBox2";
+            this.bunifuGroupBox2.Size = new System.Drawing.Size(200, 380);
+            this.bunifuGroupBox2.TabIndex = 0;
+            this.bunifuGroupBox2.TabStop = false;
+            this.bunifuGroupBox2.Text = "Thông tin Chi Tiết";
+            // 
+            // panelInfoTop
+            // 
+            this.panelInfoTop.BackgroundColor = System.Drawing.Color.Transparent;
+            this.panelInfoTop.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelInfoTop.BackgroundImage")));
+            this.panelInfoTop.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panelInfoTop.BorderColor = System.Drawing.Color.Transparent;
+            this.panelInfoTop.BorderRadius = 3;
+            this.panelInfoTop.BorderThickness = 1;
+            this.panelInfoTop.Controls.Add(this.bunifuGroupBox1);
+            this.panelInfoTop.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelInfoTop.Location = new System.Drawing.Point(0, 0);
+            this.panelInfoTop.Name = "panelInfoTop";
+            this.panelInfoTop.ShowBorders = true;
+            this.panelInfoTop.Size = new System.Drawing.Size(200, 375);
+            this.panelInfoTop.TabIndex = 0;
+            // 
+            // bunifuGroupBox1
+            // 
+            this.bunifuGroupBox1.BorderColor = System.Drawing.Color.LightGray;
+            this.bunifuGroupBox1.BorderRadius = 1;
+            this.bunifuGroupBox1.BorderThickness = 1;
+            this.bunifuGroupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.bunifuGroupBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.bunifuGroupBox1.LabelAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.bunifuGroupBox1.LabelIndent = 10;
+            this.bunifuGroupBox1.LineStyle = Bunifu.UI.WinForms.BunifuGroupBox.LineStyles.Solid;
+            this.bunifuGroupBox1.Location = new System.Drawing.Point(0, 0);
+            this.bunifuGroupBox1.Name = "bunifuGroupBox1";
+            this.bunifuGroupBox1.Size = new System.Drawing.Size(200, 375);
+            this.bunifuGroupBox1.TabIndex = 0;
+            this.bunifuGroupBox1.TabStop = false;
+            this.bunifuGroupBox1.Text = "Thông tin Cá nhân";
             // 
             // panelAction
             // 
@@ -307,6 +373,7 @@
             this.panelMain.ShowBorders = true;
             this.panelMain.Size = new System.Drawing.Size(1482, 753);
             this.panelMain.TabIndex = 1;
+          
             // 
             // ddKyhoc
             // 
@@ -751,72 +818,6 @@
             this.bunifuLabel1.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.bunifuLabel1.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
-            // panelInfoTop
-            // 
-            this.panelInfoTop.BackgroundColor = System.Drawing.Color.Transparent;
-            this.panelInfoTop.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelInfoTop.BackgroundImage")));
-            this.panelInfoTop.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panelInfoTop.BorderColor = System.Drawing.Color.Transparent;
-            this.panelInfoTop.BorderRadius = 3;
-            this.panelInfoTop.BorderThickness = 1;
-            this.panelInfoTop.Controls.Add(this.bunifuGroupBox1);
-            this.panelInfoTop.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelInfoTop.Location = new System.Drawing.Point(0, 0);
-            this.panelInfoTop.Name = "panelInfoTop";
-            this.panelInfoTop.ShowBorders = true;
-            this.panelInfoTop.Size = new System.Drawing.Size(200, 375);
-            this.panelInfoTop.TabIndex = 0;
-            // 
-            // panelInfoBottom
-            // 
-            this.panelInfoBottom.BackgroundColor = System.Drawing.Color.Transparent;
-            this.panelInfoBottom.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelInfoBottom.BackgroundImage")));
-            this.panelInfoBottom.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panelInfoBottom.BorderColor = System.Drawing.Color.Transparent;
-            this.panelInfoBottom.BorderRadius = 3;
-            this.panelInfoBottom.BorderThickness = 1;
-            this.panelInfoBottom.Controls.Add(this.bunifuGroupBox2);
-            this.panelInfoBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelInfoBottom.Location = new System.Drawing.Point(0, 373);
-            this.panelInfoBottom.Name = "panelInfoBottom";
-            this.panelInfoBottom.ShowBorders = true;
-            this.panelInfoBottom.Size = new System.Drawing.Size(200, 380);
-            this.panelInfoBottom.TabIndex = 0;
-            // 
-            // bunifuGroupBox1
-            // 
-            this.bunifuGroupBox1.BorderColor = System.Drawing.Color.LightGray;
-            this.bunifuGroupBox1.BorderRadius = 1;
-            this.bunifuGroupBox1.BorderThickness = 1;
-            this.bunifuGroupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.bunifuGroupBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.bunifuGroupBox1.LabelAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.bunifuGroupBox1.LabelIndent = 10;
-            this.bunifuGroupBox1.LineStyle = Bunifu.UI.WinForms.BunifuGroupBox.LineStyles.Solid;
-            this.bunifuGroupBox1.Location = new System.Drawing.Point(0, 0);
-            this.bunifuGroupBox1.Name = "bunifuGroupBox1";
-            this.bunifuGroupBox1.Size = new System.Drawing.Size(200, 375);
-            this.bunifuGroupBox1.TabIndex = 0;
-            this.bunifuGroupBox1.TabStop = false;
-            this.bunifuGroupBox1.Text = "Thông tin Cá nhân";
-            // 
-            // bunifuGroupBox2
-            // 
-            this.bunifuGroupBox2.BorderColor = System.Drawing.Color.LightGray;
-            this.bunifuGroupBox2.BorderRadius = 1;
-            this.bunifuGroupBox2.BorderThickness = 1;
-            this.bunifuGroupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.bunifuGroupBox2.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.bunifuGroupBox2.LabelAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.bunifuGroupBox2.LabelIndent = 10;
-            this.bunifuGroupBox2.LineStyle = Bunifu.UI.WinForms.BunifuGroupBox.LineStyles.Solid;
-            this.bunifuGroupBox2.Location = new System.Drawing.Point(0, 0);
-            this.bunifuGroupBox2.Name = "bunifuGroupBox2";
-            this.bunifuGroupBox2.Size = new System.Drawing.Size(200, 380);
-            this.bunifuGroupBox2.TabIndex = 0;
-            this.bunifuGroupBox2.TabStop = false;
-            this.bunifuGroupBox2.Text = "Thông tin Chi Tiết";
-            // 
             // FormStudent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -829,13 +830,13 @@
             this.Text = "FormStudent";
             this.Load += new System.EventHandler(this.FormStudent_Load);
             this.panelInfo.ResumeLayout(false);
+            this.panelInfoBottom.ResumeLayout(false);
+            this.panelInfoTop.ResumeLayout(false);
             this.panelAction.ResumeLayout(false);
             this.panelMain.ResumeLayout(false);
             this.panelMain.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tableChuaDangKy)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tableDangKy)).EndInit();
-            this.panelInfoTop.ResumeLayout(false);
-            this.panelInfoBottom.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

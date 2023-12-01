@@ -20,15 +20,16 @@ namespace quanLyDangKyMonHoc.Repository.Implement
             //{
             //    var user = schoolDbContext.Account.SingleOrDefault(x => x.AccountName == username);
 
-            //    if (user != null)
-            //    {
-            //        string passHash = user.Password;
-            //        bool checkLogin = BCrypt.Net.BCrypt.Verify(password, passHash);
+                //if (user != null)
+                //{
+                //    string passHash = user.password;
+                //    bool checkLogin = BCrypt.Net.BCrypt.Verify(password, passHash);
 
-            //        //IEnumerable<Account> Update(Account entity)
-            //        //{
-            //        //    throw new NotImplementedException();
-            //        //}
+                //    if (checkLogin)
+                //    {
+                //        return user;
+                //    }
+                //}
 
             //        return null;
             //    }
@@ -60,6 +61,22 @@ namespace quanLyDangKyMonHoc.Repository.Implement
             //        schoolDbContext.Dispose();
             //    }
             //}
+            return null;
+        }
+
+        public IEnumerable<Account> Create(Account entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IEnumerable<Account> Update(Account entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IEnumerable<Account> Delete(int id)
+        {
+            throw new NotImplementedException();
         }
     }
 }

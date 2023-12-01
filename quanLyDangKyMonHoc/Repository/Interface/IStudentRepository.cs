@@ -14,5 +14,6 @@ namespace quanLyDangKyMonHoc.Repository.Interface
         List<Class> getListClass();
         bool updateStudent(Student sinhvien);
         List<StudentDTO> getListStudentByClassId(int idClass);
+        List<StudentDTO> getListStudentByName(string fullNameSearch);
     }
 }

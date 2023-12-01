@@ -14,7 +14,6 @@ namespace quanLyDangKyMonHoc.View.Admin
     public partial class FormHome : Form
     {
         private UcStudentManager ucStudentManager;
-        private UcSubjectManager ucSubjectManager;
         private UcClassManager ucClassManager;
         private UcRegisterSubjectManager ucRegisterSubjectManager;
         public FormHome()
@@ -52,20 +51,7 @@ namespace quanLyDangKyMonHoc.View.Admin
         }
         private void LoadUcAction1()
         {
-            if (ucSubjectManager == null)
-            {
-                ucSubjectManager = new UcSubjectManager();
-                {
-                    Dock = DockStyle.Fill;
-                };
-                panelMain.Controls.Add(ucSubjectManager);
-
-                ucSubjectManager.BringToFront();
-            }
-            else
-            {
-                ucSubjectManager.BringToFront();
-            }
+            
         }
         private void LoadUcAction2()
         {
@@ -88,6 +74,11 @@ namespace quanLyDangKyMonHoc.View.Admin
         private void btnClassManager_Click_1(object sender, EventArgs e)
         {
             LoadUcAction2();
+        }
+
+        private void FormHome_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

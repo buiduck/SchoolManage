@@ -33,7 +33,7 @@ namespace quanLyDangKyMonHoc.View
         {
             username=txtUserName.Text;
             password=txtPassword.Text;
-            TAIKHOANS checkLogin=_userRepository.Login(username, password);
+            Account checkLogin=_userRepository.Login(username, password);
             if (true)
             {
                 FormHome formHome = new FormHome();

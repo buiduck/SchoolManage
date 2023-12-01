@@ -686,7 +686,7 @@
             this.Controls.Add(this.panelMain);
             this.Name = "FormHome";
             this.Text = "FormHome";
-            
+            this.Load += new System.EventHandler(this.FormHome_Load);
             this.panelAction.ResumeLayout(false);
             this.panelBottom.ResumeLayout(false);
             this.panelMenu.ResumeLayout(false);

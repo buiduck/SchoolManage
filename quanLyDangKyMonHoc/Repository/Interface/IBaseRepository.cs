@@ -9,9 +9,10 @@ namespace quanLyDangKyMonHoc.Repository.Interface
 {
      public interface  IBaseRepository<T>
     {
-        //IEnumerable<T> Create(T entity);
-        //IEnumerable<T> Update(T entity);
-        //IEnumerable<T> Delete(int id);
+
+        IEnumerable<T> Create(T entity);
+        IEnumerable<T> Update(T entity);
+        IEnumerable<T> Delete(int id);
 
     }
 }

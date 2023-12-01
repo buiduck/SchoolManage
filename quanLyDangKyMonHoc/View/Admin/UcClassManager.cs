@@ -28,15 +28,15 @@ namespace quanLyDangKyMonHoc.View.Admin
             // Gắn sự kiện Click cho nút tìm kiếm
             btTimkiem.Click += BtTimkiem_Click;
 
-            // Gắn sự kiện Click cho nút làm mới
-            btReset.Click += BtReset_Click;
+            //    // Gắn sự kiện Click cho nút làm mới
+            //    btReset.Click += BtReset_Click;
         }
         private void LoadData()
         {
             var list = schoolDbContext.ClassSchedule
                .Select(x => new {
                    x.Name,
-                   ten = x.Teacher.FirstName + " " + x.Teacher.LastName,
+                   ten = x.Teacher.FullName,
                    TenMonHoc = x.Subject.Name,
                    x.TotalStudent,
                    x.DayStart,
@@ -73,8 +73,7 @@ namespace quanLyDangKyMonHoc.View.Admin
         //            DPNgaykt.Value = DateTime.Now;
         //        }
 
-            }
-        }
+            
         private void btThem_Click(object sender, EventArgs e)
         {
             try
@@ -209,17 +208,11 @@ namespace quanLyDangKyMonHoc.View.Admin
         }
         private void LamMoi()
         {
-            // Xóa nội dung trong TextBox và DateTimePicker
-            txtTenlop.Text = string.Empty;
-            txtSoluongsv.Text = string.Empty;
-            DPNgaybd.Value = DateTime.Now;
-            DPNgaykt.Value = DateTime.Now;         
-            LoadData();
         }
         private void BtTimkiem_Click(object sender, EventArgs e)
         {
-            // Lấy mã lớp từ TextBox
-            string maLop = txtTimkiem.Text;
+            //// Lấy mã lớp từ TextBox
+            //string maLop = txtTimkiem.Text;
 
         //    // Kiểm tra xem mã lớp có được nhập hay không
         //    if (string.IsNullOrEmpty(maLop))
@@ -229,7 +222,7 @@ namespace quanLyDangKyMonHoc.View.Admin
         //    }
 
             // Tìm kiếm lớp theo mã
-            var lop = schoolDbContext.ClassSchedule.FirstOrDefault(l => l.Id.ToString() == maLop);
+            //var lop = schoolDbContext.ClassSchedule.FirstOrDefault(l => l.Id.ToString() == maLop);
 
         //    if (lop != null)
         //    {

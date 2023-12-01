@@ -60,6 +60,7 @@ namespace quanLyDangKyMonHoc.View.User
             tableDangKy.Columns[0].Visible = false;
 
 
+
         }
 
 
@@ -203,13 +204,13 @@ namespace quanLyDangKyMonHoc.View.User
 
         private void bunifuDropdown1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var listmonhoc = SchoolDBConText.Subject.Where().ToList();
+            //var listmonhoc = SchoolDBConText.Subject.Where().ToList();
 
-            ddMonHoc.DataSource = listmonhoc;
+            //ddMonHoc.DataSource = listmonhoc;
             ddMonHoc.DisplayMember = "Name";
             ddMonHoc.ValueMember = "Id";
         }
 
-        
+     
     }
 }

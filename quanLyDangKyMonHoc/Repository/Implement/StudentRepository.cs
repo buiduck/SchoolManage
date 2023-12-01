@@ -4,62 +4,79 @@ using quanLyDangKyMonHoc.Repository.Interface;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity.Migrations;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace quanLyDangKyMonHoc.Repository.Implement
-{
-    internal class StudentRepository : IStudentRepository
+{ class StudentRepository : IStudentRepository
     {
-        //private readonly SchoolDbContext schoolDbContext = new SchoolDbContext();
+        private readonly SchoolDbContext schoolDbContext = new SchoolDbContext();
 
-        //public List<LOP> getListClass()
-        //{
-        //   return schoolDbContext.LOP.ToList();
-        //}
+        public List<Class> getListClass()
+        {
+           return schoolDbContext.Class.ToList();
+        }
 
-        //public List<StudentDTO> getListStudent()
-        //{
-        //    return schoolDbContext.SINHVIEN.Select(x=>new StudentDTO
-        //    {
-        //        MASV=x.MASV,
-        //        HODEM=x.HODEM,
-        //        TEN=x.TEN,
-        //        EMAIL=x.EMAIL,
-        //        NGAYSINH = x.NGAYSINH,
-        //        QUEQUAN = x.QUEQUAN,
-        //        TENLOP=schoolDbContext.LOP.Where(a=>a.MALOP==x.MALOP).Select(a=>a.TenLop).FirstOrDefault()
-        //    }).ToList();
-        //}
-        //public bool updateStudent(SINHVIEN sinhvien)
-        //{
-        //    try
-        //    {
-        //        schoolDbContext.SINHVIEN.AddOrUpdate(sinhvien);
-        //        schoolDbContext.SaveChanges();
-        //        return true;
-        //    }catch (Exception ex)
-        //    {
-        //        Console.WriteLine(ex.Message);
-        //        return false;
-        //    }
-        //}
-        //public List<StudentDTO> getListStudentByClassId(int idClass)
-        //{
-        //    return schoolDbContext.SINHVIEN
-        //        .Where(x=>x.MALOP==idClass)
-        //        .OrderBy(x=>x.TEN)
-        //        .Select(x => new StudentDTO
-        //    {
-        //        MASV = x.MASV,
-        //        HODEM = x.HODEM,
-        //        TEN = x.TEN,
-        //        EMAIL = x.EMAIL,
-        //        NGAYSINH = x.NGAYSINH,
-        //        QUEQUAN = x.QUEQUAN,
-        //        TENLOP = schoolDbContext.LOP.Where(a => a.MALOP == x.MALOP).Select(a => a.TenLop).FirstOrDefault()
-        //    }).ToList();
-        //}
+        public List<StudentDTO> getListStudent()
+        {
+            return schoolDbContext.Student.Select(x=>new StudentDTO
+            {
+                MASV=x.Id,
+                HODEM=x.FirstName,
+                TEN=x.LastName,
+                EMAIL=x.Email,
+                NGAYSINH = x.DateOfBirth,
+                QUEQUAN = x.Address,
+                TENLOP=schoolDbContext.Class.Where(a=>a.Id==x.ClassId).Select(a=>a.Name).FirstOrDefault()
+            }).ToList();
+        }
+        public bool updateStudent(Student student)
+        {
+            try
+            {
+                schoolDbContext.Student.AddOrUpdate(student);
+                schoolDbContext.SaveChanges();
+                return true;
+            }catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return false;
+            }
+        }
+        public List<StudentDTO> getListStudentByClassId(int idClass)
+        {
+            return schoolDbContext.Student
+                .Where(x=>x.Id==idClass)
+                .OrderBy(x=>x.LastName)
+                .Select(x => new StudentDTO
+            {
+                    MASV = x.Id,
+                    HODEM = x.FirstName,
+                    TEN = x.LastName,
+                    EMAIL = x.Email,
+                    NGAYSINH = x.DateOfBirth,
+                    QUEQUAN = x.Address,
+                    TENLOP = schoolDbContext.Class.Where(a => a.Id == x.ClassId).Select(a => a.Name).FirstOrDefault()
+                }).ToList();
+        }
+
+        public List<StudentDTO> getListStudentByName(string fullNameSearch)
+        {
+            string querry= "EXEC searchStudent @fullName";
+            object[] parameters = { new SqlParameter("@fullName", fullNameSearch) };
+            IEnumerable<Student>result= schoolDbContext.Database.SqlQuery<Student>(querry,parameters);
+            return result.Select(x => new StudentDTO
+            {
+                MASV = x.Id,
+                TEN = x.LastName,
+                EMAIL = x.Email,
+                HODEM = x.FirstName,
+                NGAYSINH = x.DateOfBirth,
+                QUEQUAN = x.Address,
+                TENLOP = schoolDbContext.Class.SingleOrDefault(c => c.Id == x.ClassId).Name
+            }).ToList();
+        }
     }
 }
