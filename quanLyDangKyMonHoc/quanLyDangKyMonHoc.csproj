@@ -41,11 +41,11 @@
     </Reference>
     <Reference Include="Bunifu.Dataviz.WinForms, Version=2.2.0.0, Culture=neutral, PublicKeyToken=2cd9edde853ca0a6, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>Resources\DLL\Bunifu.Dataviz.WinForms.dll</HintPath>
+      <HintPath>C:\Users\ACER\Downloads\Bunifu_Dataviz_v2.2.1\Bunifu.Dataviz.WinForms.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms, Version=0.0.0.0, Culture=neutral, PublicKeyToken=2cd9edde853ca0a6, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>Resources\DLL\Bunifu.UI.WinForms.dll</HintPath>
+      <HintPath>C:\Users\ACER\Downloads\Bunifu_UI_WinForm_6.1\Bunifu.UI.WinForms.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
@@ -84,6 +84,7 @@
     <Compile Include="Model\ClassSchedule.cs" />
     <Compile Include="Model\Course.cs" />
     <Compile Include="Model\Major.cs" />
+    <Compile Include="Model\MyComboBox.cs" />
     <Compile Include="Model\SchoolDbContext.cs" />
     <Compile Include="Model\Roles.cs" />
     <Compile Include="Model\SchoolYear.cs" />

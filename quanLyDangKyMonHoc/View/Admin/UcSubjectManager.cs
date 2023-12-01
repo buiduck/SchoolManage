@@ -9,22 +9,75 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace quanLyDangKySubject.View.Admin
+namespace quanLyDangKyMonHoc.View.Admin
 {
     public partial class UcSubjectManager : UserControl
     {
        SchoolDbContext schoolDbContext = new SchoolDbContext();
+        private int selectedId ;
+        List<MyComboBox> listkihoc = new List<MyComboBox>();
         public UcSubjectManager()
         {
 
             InitializeComponent();
             LoadData();
+            listkihoc = schoolDbContext.AcademicYear.ToList()
+            .Select(x => new MyComboBox
+            {
+                Value = x.Id,
+                Text = $"{x.SemesterName} ({(x.SchoolYear.TimeStart.HasValue ? x.SchoolYear.TimeStart.Value.Year : (int?)null)}-{(x.SchoolYear.TimeEnd.HasValue ? x.SchoolYear.TimeEnd.Value.Year : (int?)null)})",
+            })
+            .OrderByDescending(x => x.Value)
+            .ToList();
+            ddKihoc.DataSource = listkihoc;
+            ddKihoc.DisplayMember = "Text";
+            ddKihoc.ValueMember = "Value";
 
+            tbDanhsachmh.CellClick += TbDanhsachmh_CellClick;
         }
+
+        private void TbDanhsachmh_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridViewRow row = tbDanhsachmh.SelectedRows[0];
+            var kiHocId = int.Parse(row.Cells["AcademicYearId"].Value.ToString());
+            ddKihoc.SelectedItem = listkihoc.First(x => x.Value == kiHocId);
+        }
+
         private void LoadData()
         {
-            var list = schoolDbContext.Subject.ToList();
+            var list = schoolDbContext.Subject
+       
+             .Select(x => new
+             {
+                 x.Id,
+                 x.Name,
+                 x.CourseCredit,
+                 x.TypeOfSubject,
+                 x.AcademicYearId,
+                 AcademicYear = x.AcademicYear.SemesterName,
+                 SchoolYearStart = x.AcademicYear.SchoolYear.TimeStart,
+                 SchoolYearEnd = x.AcademicYear.SchoolYear.TimeEnd
+             })
+             .ToList()
+             .Select(x => new
+             {
+                 x.Id,
+                 x.Name,
+                 x.CourseCredit,
+                 x.TypeOfSubject,
+                 x.AcademicYearId,
+                 kihoc = $"{x.AcademicYear} ({(x.SchoolYearStart.HasValue ? x.SchoolYearStart.Value.Year : (int?)null)}-{(x.SchoolYearEnd.HasValue ? x.SchoolYearEnd.Value.Year : (int?)null)})",
+             })
+             .ToList();
+
             tbDanhsachmh.DataSource = list;
+            tbDanhsachmh.Columns[0].Visible = false;
+            tbDanhsachmh.Columns[1].HeaderText = "Tên môn";
+            tbDanhsachmh.Columns[2].HeaderText = "số tín chỉ";
+            tbDanhsachmh.Columns[2].HeaderText = "Loại Môn Học";
+            tbDanhsachmh.Columns[3].Visible = false;
+            tbDanhsachmh.Columns[4].HeaderText = "Kì Học";
+            
         }
 
         private void tbDanhsachmh_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -60,25 +113,30 @@ namespace quanLyDangKySubject.View.Admin
                
                 string tenSubject = txtTenmh.Text;
                 string tenLoaimh = txtLoaimh.Text;
-                int soTiet = Convert.ToInt32(numericUpDown1.Value);
+
+                int soTinChi = Convert.ToInt32(numericUpDown1.Value);
+                var makihoc = ((MyComboBox)ddKihoc.SelectedItem).Value;
                 // Kiểm tra xem có thiếu thông tin không
-                if ( string.IsNullOrEmpty(tenSubject))
+                if ( string.IsNullOrEmpty(tenSubject)||string.IsNullOrEmpty(tenLoaimh))
                 {
                     MessageBox.Show("Vui lòng nhập đầy đủ thông tin môn học.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
+               
                 // Tạo một đối tượng Subject mới
                 Subject SubjectMoi = new Subject
                 {
                     Name = tenSubject,
                     TypeOfSubject = tenLoaimh,
-                    CourseCredit = soTiet
+                    CourseCredit = soTinChi,
+                    AcademicYearId= makihoc,
                 };
                 // Thêm môn học vào danh sách và lưu vào cơ sở dữ liệu
                 schoolDbContext.Subject.Add(SubjectMoi);
                 schoolDbContext.SaveChanges();
                 // Hiển thị thông báo thành công và làm mới danh sách
                 MessageBox.Show("Thêm môn học thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                xoaThongTin();
                 LoadData();
             }
             catch (Exception ex)
@@ -91,29 +149,42 @@ namespace quanLyDangKySubject.View.Admin
         {
             try
             {
-                // Lấy tên môn học từ DataGridView
-                string tenMonHoc = txtTenmh.Text;
-
-                // Kiểm tra xem môn học đã tồn tại hay không
-                var monHoc = schoolDbContext.Subject.FirstOrDefault(mh => mh.Name.ToLower() == tenMonHoc.ToLower());
-
-                if (monHoc == null)
+                // Kiểm tra xem đã chọn hàng để xóa chưa
+                if (tbDanhsachmh.SelectedRows.Count > 0)
                 {
-                    MessageBox.Show("Không tìm thấy môn học.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
+                    var row = tbDanhsachmh.SelectedRows[0];
+                    // Lấy tên lớp học của hàng được chọn
+
+                    int id = int.Parse(row.Cells["Id"].Value.ToString());
+
+                    string tenMonhoc = row.Cells["Name"].Value.ToString();
+                    // Tìm lớp học trong cơ sở dữ liệu bằng tên lớp
+                    var monhoc = schoolDbContext.Subject.FirstOrDefault(lop => lop.Id == id);
+                    // Kiểm tra xem lớp học có tồn tại hay không
+                    if (monhoc != null)
+                    {
+                        var soHocSinh = schoolDbContext.Student.Count(x => x.ClassSchedule.Any(y => y.SubjectId == id));
+                        if(soHocSinh > 0)
+                        {
+                            MessageBox.Show($"Lớp đang có {soHocSinh} đăng ký, không thể xóa", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+
+                        }
+                        // Xóa lớp học từ cơ sở dữ liệu
+                        schoolDbContext.Subject.Remove(monhoc);
+                        schoolDbContext.SaveChanges();
+                        // Hiển thị thông báo xóa thành công và làm mới danh sách
+                        MessageBox.Show("Xóa lớp học thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        LoadData();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Không tìm thấy lớp học để xóa.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
                 }
-
-                // Xác nhận xóa môn học
-                DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn xóa môn học này?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-                if (result == DialogResult.Yes)
+                else
                 {
-                    // Xóa môn học khỏi danh sách và cơ sở dữ liệu
-                    schoolDbContext.Subject.Remove(monHoc);
-                    schoolDbContext.SaveChanges();
-
-                    MessageBox.Show("Xóa môn học thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    LoadData();
+                    MessageBox.Show("Vui lòng chọn lớp học để xóa.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
             catch (Exception ex)
@@ -128,7 +199,7 @@ namespace quanLyDangKySubject.View.Admin
                 // Lấy tên môn học từ DataGridView
                 string tenMonHoc = txtTenmh.Text;
                 // Kiểm tra xem môn học đã tồn tại hay không
-                var monHoc = schoolDbContext.Subject.FirstOrDefault(mh => mh.Name.ToLower() == tenMonHoc.ToLower());
+                var monHoc = schoolDbContext.Subject.FirstOrDefault(mh => mh.Id==selectedId);
                 if (monHoc == null)
                 {
                     MessageBox.Show("Không tìm thấy môn học.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -163,6 +234,7 @@ namespace quanLyDangKySubject.View.Admin
             txtTenmh.Text = string.Empty;
             txtLoaimh.Text = string.Empty;
             numericUpDown1.Value = 0;
+            
         }
 
         private void TimKiemSubject(string tenSubject)
@@ -173,6 +245,7 @@ namespace quanLyDangKySubject.View.Admin
 
             // Hiển thị kết quả tìm kiếm trên DataGridView
             tbDanhsachmh.DataSource = danhSachSubject;
+            
         }
 
         private void btTimkiem_Click(object sender, EventArgs e)
@@ -193,6 +266,7 @@ namespace quanLyDangKySubject.View.Admin
         private void btReset_Click(object sender, EventArgs e)
         {
             LamMoi();
+            LoadData();
         }
         private void btSapxep_Click(object sender, EventArgs e)
         {           
@@ -207,20 +281,28 @@ namespace quanLyDangKySubject.View.Admin
         }
         private void SapXepSubjectGiamDan()
         {
-            var danhSachSubjectGiamDan = schoolDbContext.Subject.OrderByDescending(mh => mh.TypeOfSubject).ToList();
+            var danhSachSubjectGiamDan = schoolDbContext.Subject.OrderByDescending(mh => mh.CourseCredit).ToList();
             tbDanhsachmh.DataSource = danhSachSubjectGiamDan;
         }
         private void SapXepSubjectTangDan()
         {
             var danhSachSubjectTangDan = schoolDbContext.Subject
-                .OrderBy(mh => mh.TypeOfSubject)
+                .OrderBy(mh => mh.CourseCredit)
                 .ToList();
             tbDanhsachmh.DataSource = danhSachSubjectTangDan;
         }
 
-        private void bunifuLabel2_Click(object sender, EventArgs e)
+        private void bunifuGroupBox1_Enter(object sender, EventArgs e)
         {
 
         }
+        private void xoaThongTin()
+        {
+            txtTenmh.Text = "";
+            txtLoaimh.Text = "";
+            numericUpDown1.Value = 0;     
+            ddKihoc.SelectedIndex = -1;
+        }
+
     }
 }

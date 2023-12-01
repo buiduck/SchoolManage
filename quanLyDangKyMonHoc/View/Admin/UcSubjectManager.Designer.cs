@@ -1,4 +1,4 @@
-﻿namespace quanLyDangKySubject.View.Admin
+﻿namespace quanLyDangKyMonHoc.View.Admin
 {
     partial class UcSubjectManager
     {
@@ -67,6 +67,8 @@
             this.bunifuLabel6 = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuLabel5 = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuGroupBox2 = new Bunifu.UI.WinForms.BunifuGroupBox();
+            this.ddKihoc = new Bunifu.UI.WinForms.BunifuDropdown();
+            this.bunifuLabel1 = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuImageButton6 = new Bunifu.UI.WinForms.BunifuImageButton();
             this.bunifuImageButton5 = new Bunifu.UI.WinForms.BunifuImageButton();
             this.bunifuImageButton4 = new Bunifu.UI.WinForms.BunifuImageButton();
@@ -112,6 +114,7 @@
             this.bunifuGroupBox1.TabIndex = 1;
             this.bunifuGroupBox1.TabStop = false;
             this.bunifuGroupBox1.Text = "Quản Lý Môn Học";
+            this.bunifuGroupBox1.Enter += new System.EventHandler(this.bunifuGroupBox1_Enter);
             // 
             // btReset
             // 
@@ -387,7 +390,7 @@
             this.btTimkiem.IdleIconLeftImage = null;
             this.btTimkiem.IdleIconRightImage = null;
             this.btTimkiem.IndicateFocus = false;
-            this.btTimkiem.Location = new System.Drawing.Point(159, 106);
+            this.btTimkiem.Location = new System.Drawing.Point(166, 106);
             this.btTimkiem.Name = "btTimkiem";
             this.btTimkiem.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btTimkiem.OnDisabledState.BorderRadius = 1;
@@ -742,6 +745,8 @@
             this.bunifuGroupBox2.BorderColor = System.Drawing.Color.LightGray;
             this.bunifuGroupBox2.BorderRadius = 1;
             this.bunifuGroupBox2.BorderThickness = 1;
+            this.bunifuGroupBox2.Controls.Add(this.ddKihoc);
+            this.bunifuGroupBox2.Controls.Add(this.bunifuLabel1);
             this.bunifuGroupBox2.Controls.Add(this.bunifuImageButton6);
             this.bunifuGroupBox2.Controls.Add(this.bunifuImageButton5);
             this.bunifuGroupBox2.Controls.Add(this.bunifuImageButton4);
@@ -765,6 +770,65 @@
             this.bunifuGroupBox2.TabIndex = 0;
             this.bunifuGroupBox2.TabStop = false;
             this.bunifuGroupBox2.Text = "Thông tin môn học";
+            // 
+            // ddKihoc
+            // 
+            this.ddKihoc.BackColor = System.Drawing.Color.Transparent;
+            this.ddKihoc.BackgroundColor = System.Drawing.Color.White;
+            this.ddKihoc.BorderColor = System.Drawing.Color.Silver;
+            this.ddKihoc.BorderRadius = 1;
+            this.ddKihoc.Color = System.Drawing.Color.Silver;
+            this.ddKihoc.Direction = Bunifu.UI.WinForms.BunifuDropdown.Directions.Down;
+            this.ddKihoc.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.ddKihoc.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.ddKihoc.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.ddKihoc.DisabledForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.ddKihoc.DisabledIndicatorColor = System.Drawing.Color.DarkGray;
+            this.ddKihoc.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.ddKihoc.DropdownBorderThickness = Bunifu.UI.WinForms.BunifuDropdown.BorderThickness.Thin;
+            this.ddKihoc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ddKihoc.DropDownTextAlign = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
+            this.ddKihoc.FillDropDown = true;
+            this.ddKihoc.FillIndicator = false;
+            this.ddKihoc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ddKihoc.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.ddKihoc.ForeColor = System.Drawing.Color.Black;
+            this.ddKihoc.FormattingEnabled = true;
+            this.ddKihoc.Icon = null;
+            this.ddKihoc.IndicatorAlignment = Bunifu.UI.WinForms.BunifuDropdown.Indicator.Right;
+            this.ddKihoc.IndicatorColor = System.Drawing.Color.DarkGray;
+            this.ddKihoc.IndicatorLocation = Bunifu.UI.WinForms.BunifuDropdown.Indicator.Right;
+            this.ddKihoc.IndicatorThickness = 2;
+            this.ddKihoc.IsDropdownOpened = false;
+            this.ddKihoc.ItemBackColor = System.Drawing.Color.White;
+            this.ddKihoc.ItemBorderColor = System.Drawing.Color.White;
+            this.ddKihoc.ItemForeColor = System.Drawing.Color.Black;
+            this.ddKihoc.ItemHeight = 26;
+            this.ddKihoc.ItemHighLightColor = System.Drawing.Color.DodgerBlue;
+            this.ddKihoc.ItemHighLightForeColor = System.Drawing.Color.White;
+            this.ddKihoc.ItemTopMargin = 3;
+            this.ddKihoc.Location = new System.Drawing.Point(246, 202);
+            this.ddKihoc.Name = "ddKihoc";
+            this.ddKihoc.Size = new System.Drawing.Size(246, 32);
+            this.ddKihoc.TabIndex = 17;
+            this.ddKihoc.Text = null;
+            this.ddKihoc.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
+            this.ddKihoc.TextLeftMargin = 5;
+            // 
+            // bunifuLabel1
+            // 
+            this.bunifuLabel1.AllowParentOverrides = false;
+            this.bunifuLabel1.AutoEllipsis = false;
+            this.bunifuLabel1.CursorType = null;
+            this.bunifuLabel1.Font = new System.Drawing.Font("Verdana", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuLabel1.Location = new System.Drawing.Point(39, 206);
+            this.bunifuLabel1.Name = "bunifuLabel1";
+            this.bunifuLabel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.bunifuLabel1.Size = new System.Drawing.Size(80, 28);
+            this.bunifuLabel1.TabIndex = 16;
+            this.bunifuLabel1.Text = "Kì học";
+            this.bunifuLabel1.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.bunifuLabel1.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
             // bunifuImageButton6
             // 
@@ -1050,7 +1114,7 @@
             this.btSua.IdleIconLeftImage = null;
             this.btSua.IdleIconRightImage = null;
             this.btSua.IndicateFocus = false;
-            this.btSua.Location = new System.Drawing.Point(292, 277);
+            this.btSua.Location = new System.Drawing.Point(281, 277);
             this.btSua.Name = "btSua";
             this.btSua.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btSua.OnDisabledState.BorderRadius = 1;
@@ -1191,12 +1255,12 @@
             this.bunifuLabel4.AutoEllipsis = false;
             this.bunifuLabel4.CursorType = null;
             this.bunifuLabel4.Font = new System.Drawing.Font("Verdana", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuLabel4.Location = new System.Drawing.Point(39, 150);
+            this.bunifuLabel4.Location = new System.Drawing.Point(39, 151);
             this.bunifuLabel4.Name = "bunifuLabel4";
             this.bunifuLabel4.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel4.Size = new System.Drawing.Size(137, 28);
+            this.bunifuLabel4.Size = new System.Drawing.Size(120, 28);
             this.bunifuLabel4.TabIndex = 6;
-            this.bunifuLabel4.Text = "Số tiết học";
+            this.bunifuLabel4.Text = "Số tín chỉ";
             this.bunifuLabel4.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.bunifuLabel4.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
@@ -1282,7 +1346,7 @@
             this.bunifuLabel3.AutoEllipsis = false;
             this.bunifuLabel3.CursorType = null;
             this.bunifuLabel3.Font = new System.Drawing.Font("Verdana", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuLabel3.Location = new System.Drawing.Point(39, 100);
+            this.bunifuLabel3.Location = new System.Drawing.Point(39, 96);
             this.bunifuLabel3.Name = "bunifuLabel3";
             this.bunifuLabel3.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.bunifuLabel3.Size = new System.Drawing.Size(172, 28);
@@ -1381,7 +1445,6 @@
             this.bunifuLabel2.Text = "Tên môn học";
             this.bunifuLabel2.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.bunifuLabel2.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            this.bunifuLabel2.Click += new System.EventHandler(this.bunifuLabel2_Click);
             // 
             // panelMainManager
             // 
@@ -1454,5 +1517,7 @@
         private Bunifu.UI.WinForms.BunifuRadioButton btrTangdan;
         private Bunifu.UI.WinForms.BunifuRadioButton btrGiamdan;
         private Bunifu.UI.WinForms.BunifuPanel panelMainManager;
+        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel1;
+        private Bunifu.UI.WinForms.BunifuDropdown ddKihoc;
     }
 }

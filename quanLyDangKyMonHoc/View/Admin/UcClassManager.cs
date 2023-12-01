@@ -18,61 +18,62 @@ namespace quanLyDangKyMonHoc.View.Admin
         {
             InitializeComponent();
             LoadData();
+            //
             var listSelectGV = schoolDbContext.Teacher.Select(
                 x => new
                 {
                     Value = x.id,
                     Text = x.FirstName + " " + x.LastName
+                   
                 })
                 .ToList();
-            // Gắn sự kiện Click cho nút tìm kiếm
-            btTimkiem.Click += BtTimkiem_Click;
+              ddMaGV.DataSource = listSelectGV;
+              ddMaGV.DisplayMember= "Text";
+            ddMaGV.ValueMember = "Value";
+            //
+            var listSelectMH = schoolDbContext.Subject.Select(
+                x => new
+                {
+                    Value = x.Id,
+                    Text = x.Name
 
-            //    // Gắn sự kiện Click cho nút làm mới
-            //    btReset.Click += BtReset_Click;
+                })
+                .ToList();
+            ddMaMH.DataSource = listSelectMH;
+            ddMaMH.DisplayMember = "Text";
+            ddMaMH.ValueMember = "Value";
+            
+
+                // Gắn sự kiện Click cho nút làm mới
+               btReset.Click += BtReset_Click;
+
         }
+
         private void LoadData()
         {
+
             var list = schoolDbContext.ClassSchedule
                .Select(x => new {
-                   x.Name,
+                   x.Id,
+                   x.Name,                  
                    ten = x.Teacher.FullName,
                    TenMonHoc = x.Subject.Name,
                    x.TotalStudent,
                    x.DayStart,
                    x.DayEnd,
+                   
+                 
                })
                .ToList();
             tbDanhsachlh.DataSource = list;
+           // tbDanhsachlh.Columns[1].HeaderText = "Tên lớp";
+          //  tbDanhsachlh.Columns[0].Visible= false;
         }
 
-        //private void tbDanhsachlh_CellClick(object sender, DataGridViewCellEventArgs e)
-        //{
-        //    int r = e.RowIndex;
-        //    if (r >= 0)
-        //    {
-        //        DataGridViewRow row = tbDanhsachlh.Rows[r];
-                
-        //        txtTenlop.Text = row.Cells[1].Value.ToString();
-        //        txtSoluongsv.Text = row.Cells[3].Value.ToString();
-
-        //        if (DateTime.TryParse(row.Cells[4].Value.ToString(), out DateTime dateValue))
-        //        {
-        //            DPNgaybd.Value = dateValue;
-        //        }
-        //        else
-        //        {      
-        //            DPNgaybd.Value = DateTime.Now; 
-        //        }
-        //        if (DateTime.TryParse(row.Cells[5].Value.ToString(), out DateTime dateValue1))
-        //        {
-        //            DPNgaykt.Value = dateValue1;
-        //        }
-        //        else
-        //        {
-        //            DPNgaykt.Value = DateTime.Now;
-        //        }
-
+        private void tbDanhsachlh_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+          
+        }
             
         private void btThem_Click(object sender, EventArgs e)
         {
@@ -132,7 +133,7 @@ namespace quanLyDangKyMonHoc.View.Admin
                 if (tbDanhsachlh.SelectedRows.Count > 0)
                 {
                     // Lấy mã lớp học của hàng được chọn
-                    int maLopHoc = Convert.ToInt32(tbDanhsachlh.SelectedRows[0].Cells["MALOPHP"].Value);
+                    int maLopHoc = Convert.ToInt32(tbDanhsachlh.SelectedRows[0].Cells["Id"].Value);
                     // Tìm lớp học trong cơ sở dữ liệu
                     var lopHoc = schoolDbContext.ClassSchedule.Find(maLopHoc);
                     // Lấy thông tin từ các điều khiển
@@ -177,13 +178,24 @@ namespace quanLyDangKyMonHoc.View.Admin
                 // Kiểm tra xem đã chọn hàng để xóa chưa
                 if (tbDanhsachlh.SelectedRows.Count > 0)
                 {
+                    var row = tbDanhsachlh.SelectedRows[0];
                     // Lấy tên lớp học của hàng được chọn
-                    string tenLopHoc = tbDanhsachlh.SelectedRows[0].Cells["TENLOP"].Value.ToString();
+
+                    int id = int.Parse(row.Cells["Id"].Value.ToString());
+
+                    string tenLopHoc = row.Cells["TenMonHoc"].Value.ToString();
                     // Tìm lớp học trong cơ sở dữ liệu bằng tên lớp
-                    var lopHoc = schoolDbContext.ClassSchedule.FirstOrDefault(lop => lop.Name == tenLopHoc);
+                    var lopHoc = schoolDbContext.ClassSchedule.FirstOrDefault(lop => lop.Id == id);
                     // Kiểm tra xem lớp học có tồn tại hay không
                     if (lopHoc != null)
                     {
+                        var soHocSinh = schoolDbContext.Student.Count(x => x.ClassSchedule.Any(y => y.SubjectId == id));
+                        if (soHocSinh > 0)
+                        {
+                            MessageBox.Show($"Lớp đang có {soHocSinh} đăng ký, không thể xóa", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+
+                        }
                         // Xóa lớp học từ cơ sở dữ liệu
                         schoolDbContext.ClassSchedule.Remove(lopHoc);
                         schoolDbContext.SaveChanges();
@@ -208,51 +220,70 @@ namespace quanLyDangKyMonHoc.View.Admin
         }
         private void LamMoi()
         {
+            // Xóa nội dung trong TextBox và DateTimePicker
+            txtTenlop.Text = string.Empty;
+            txtSoluongsv.Text = string.Empty;
+            DPNgaybd.Value = DateTime.Now;
+            DPNgaykt.Value = DateTime.Now;
+            LoadData();
         }
-        private void BtTimkiem_Click(object sender, EventArgs e)
+    
+       private void BtReset_Click(object sender, EventArgs e)
         {
-            //// Lấy mã lớp từ TextBox
-            //string maLop = txtTimkiem.Text;
-
-        //    // Kiểm tra xem mã lớp có được nhập hay không
-        //    if (string.IsNullOrEmpty(maLop))
-        //    {
-        //        MessageBox.Show("Vui lòng nhập mã lớp để tìm kiếm.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-        //        return;
-        //    }
-
-            // Tìm kiếm lớp theo mã
-            //var lop = schoolDbContext.ClassSchedule.FirstOrDefault(l => l.Id.ToString() == maLop);
-
-        //    if (lop != null)
-        //    {
-        //        HienThiThongTinLop(lop);
-        //    }
-        //    else
-        //    {
-        //        MessageBox.Show("Không tìm thấy lớp có mã " + maLop, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        //    }
-        //}
-        //private void BtReset_Click(object sender, EventArgs e)
-        //{
-
             LamMoi();
         }
-        private void HienThiThongTinLop(ClassSchedule lop)
+
+
+
+        private void TimKiemClass(string tenClass)
         {
-            // Hiển thị thông tin lớp trên các điều khiển
-            txtTenlop.Text = lop.Name;
-            txtSoluongsv.Text = lop.TotalStudent.ToString();
-            // Kiểm tra lớp có giá trị ngày bắt đầu
-            if (lop.DayStart != null)
+            var danhSachClass = schoolDbContext.ClassSchedule
+                .Where(lh => lh.Name.ToLower().Contains(tenClass.ToLower()))
+                .ToList();
+
+            // Hiển thị kết quả tìm kiếm trên DataGridView
+            tbDanhsachlh.DataSource = danhSachClass;
+        }
+        private void btTimkiem_Click_1(object sender, EventArgs e)
+        {
+            string tenClassTimKiem = txtTimkiem.Text;
+            TimKiemClass(tenClassTimKiem);
+        }
+
+        private void tbDanhsachlh_CellClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            int r = e.RowIndex;
+            if (r >= 0)
             {
-                DPNgaybd.Value = DateTime.ParseExact(lop.DayStart.ToString(), "yyyy-MM-dd", null);
-            }
-            // Kiểm tra lớp có giá trị ngày kết thúc
-            if (lop.DayEnd != null)
-            {
-                DPNgaykt.Value = DateTime.ParseExact(lop.DayEnd.ToString(), "yyyy-MM-dd", null);
+                DataGridViewRow row = tbDanhsachlh.Rows[r];
+
+                txtTenlop.Text = row.Cells[1].Value.ToString();
+                txtSoluongsv.Text = row.Cells[4].Value.ToString();
+
+                if (DateTime.TryParse(row.Cells[5].Value.ToString(), out DateTime dateValue))
+                {
+                    DPNgaybd.Value = dateValue;
+                }
+                else
+                {
+                    DPNgaybd.Value = DateTime.Now;
+                }
+                if (DateTime.TryParse(row.Cells[6].Value.ToString(), out DateTime dateValue1))
+                {
+                    DPNgaykt.Value = dateValue1;
+                }
+                else
+                {
+                    DPNgaykt.Value = DateTime.Now;
+                }
+          
             }
         }
+
+        private void bunifuGroupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

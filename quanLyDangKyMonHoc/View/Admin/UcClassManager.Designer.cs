@@ -108,6 +108,7 @@
             this.bunifuGroupBox1.TabIndex = 0;
             this.bunifuGroupBox1.TabStop = false;
             this.bunifuGroupBox1.Text = "Quản lý lớp học";
+            this.bunifuGroupBox1.Enter += new System.EventHandler(this.bunifuGroupBox1_Enter);
             // 
             // btReset
             // 
@@ -276,8 +277,7 @@
             this.tbDanhsachlh.Size = new System.Drawing.Size(1006, 281);
             this.tbDanhsachlh.TabIndex = 0;
             this.tbDanhsachlh.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light;
-            //this.tbDanhsachlh.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tbDanhsachlh_CellClick);
-          
+            this.tbDanhsachlh.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tbDanhsachlh_CellClick_1);
             // 
             // bunifuGroupBox4
             // 
@@ -824,7 +824,7 @@
             this.btTimkiem.TextMarginLeft = 0;
             this.btTimkiem.TextPadding = new System.Windows.Forms.Padding(0);
             this.btTimkiem.UseDefaultRadiusAndThickness = true;
-           
+            this.btTimkiem.Click += new System.EventHandler(this.btTimkiem_Click_1);
             // 
             // bunifuDropdown1
             // 
@@ -989,7 +989,6 @@
             this.bunifuGroupBox2.TabIndex = 1;
             this.bunifuGroupBox2.TabStop = false;
             this.bunifuGroupBox2.Text = "Thông tin lớp";
-       
             // 
             // txtSoluongsv
             // 
@@ -1020,7 +1019,7 @@
             this.txtSoluongsv.IconRight = null;
             this.txtSoluongsv.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txtSoluongsv.Lines = new string[0];
-            this.txtSoluongsv.Location = new System.Drawing.Point(159, 213);
+            this.txtSoluongsv.Location = new System.Drawing.Point(159, 194);
             this.txtSoluongsv.MaxLength = 32767;
             this.txtSoluongsv.MinimumSize = new System.Drawing.Size(1, 1);
             this.txtSoluongsv.Modified = false;
@@ -1088,7 +1087,7 @@
             this.DPNgaykt.IconColor = System.Drawing.Color.Gray;
             this.DPNgaykt.IconLocation = Bunifu.UI.WinForms.BunifuDatePicker.Indicator.Right;
             this.DPNgaykt.LeftTextMargin = 5;
-            this.DPNgaykt.Location = new System.Drawing.Point(159, 175);
+            this.DPNgaykt.Location = new System.Drawing.Point(159, 156);
             this.DPNgaykt.MinimumSize = new System.Drawing.Size(4, 32);
             this.DPNgaykt.Name = "DPNgaykt";
             this.DPNgaykt.Size = new System.Drawing.Size(296, 32);
@@ -1115,7 +1114,7 @@
             this.DPNgaybd.IconColor = System.Drawing.Color.Gray;
             this.DPNgaybd.IconLocation = Bunifu.UI.WinForms.BunifuDatePicker.Indicator.Right;
             this.DPNgaybd.LeftTextMargin = 5;
-            this.DPNgaybd.Location = new System.Drawing.Point(159, 132);
+            this.DPNgaybd.Location = new System.Drawing.Point(159, 113);
             this.DPNgaybd.MinimumSize = new System.Drawing.Size(4, 32);
             this.DPNgaybd.Name = "DPNgaybd";
             this.DPNgaybd.Size = new System.Drawing.Size(296, 32);
@@ -1158,7 +1157,7 @@
             this.ddMaMH.ItemHighLightColor = System.Drawing.Color.DodgerBlue;
             this.ddMaMH.ItemHighLightForeColor = System.Drawing.Color.White;
             this.ddMaMH.ItemTopMargin = 3;
-            this.ddMaMH.Location = new System.Drawing.Point(159, 311);
+            this.ddMaMH.Location = new System.Drawing.Point(159, 290);
             this.ddMaMH.Name = "ddMaMH";
             this.ddMaMH.Size = new System.Drawing.Size(296, 32);
             this.ddMaMH.TabIndex = 15;
@@ -1202,7 +1201,7 @@
             this.ddMaGV.ItemHighLightColor = System.Drawing.Color.DodgerBlue;
             this.ddMaGV.ItemHighLightForeColor = System.Drawing.Color.White;
             this.ddMaGV.ItemTopMargin = 3;
-            this.ddMaGV.Location = new System.Drawing.Point(159, 263);
+            this.ddMaGV.Location = new System.Drawing.Point(159, 244);
             this.ddMaGV.Name = "ddMaGV";
             this.ddMaGV.Size = new System.Drawing.Size(296, 32);
             this.ddMaGV.TabIndex = 4;
@@ -1239,7 +1238,7 @@
             this.txtTenlop.IconRight = null;
             this.txtTenlop.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txtTenlop.Lines = new string[0];
-            this.txtTenlop.Location = new System.Drawing.Point(159, 86);
+            this.txtTenlop.Location = new System.Drawing.Point(159, 56);
             this.txtTenlop.MaxLength = 32767;
             this.txtTenlop.MinimumSize = new System.Drawing.Size(1, 1);
             this.txtTenlop.Modified = false;
@@ -1293,7 +1292,7 @@
             this.bunifuLabel8.Cursor = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel8.CursorType = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel8.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuLabel8.Location = new System.Drawing.Point(34, 311);
+            this.bunifuLabel8.Location = new System.Drawing.Point(27, 299);
             this.bunifuLabel8.Name = "bunifuLabel8";
             this.bunifuLabel8.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.bunifuLabel8.Size = new System.Drawing.Size(97, 23);
@@ -1309,7 +1308,7 @@
             this.bunifuLabel7.Cursor = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel7.CursorType = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel7.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuLabel7.Location = new System.Drawing.Point(33, 272);
+            this.bunifuLabel7.Location = new System.Drawing.Point(26, 253);
             this.bunifuLabel7.Name = "bunifuLabel7";
             this.bunifuLabel7.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.bunifuLabel7.Size = new System.Drawing.Size(108, 23);
@@ -1325,7 +1324,7 @@
             this.bunifuLabel6.Cursor = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel6.CursorType = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel6.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuLabel6.Location = new System.Drawing.Point(33, 218);
+            this.bunifuLabel6.Location = new System.Drawing.Point(27, 206);
             this.bunifuLabel6.Name = "bunifuLabel6";
             this.bunifuLabel6.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.bunifuLabel6.Size = new System.Drawing.Size(93, 23);
@@ -1341,7 +1340,7 @@
             this.bunifuLabel5.Cursor = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel5.CursorType = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel5.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuLabel5.Location = new System.Drawing.Point(34, 175);
+            this.bunifuLabel5.Location = new System.Drawing.Point(27, 165);
             this.bunifuLabel5.Name = "bunifuLabel5";
             this.bunifuLabel5.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.bunifuLabel5.Size = new System.Drawing.Size(107, 23);
@@ -1357,7 +1356,7 @@
             this.bunifuLabel4.Cursor = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel4.CursorType = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel4.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuLabel4.Location = new System.Drawing.Point(34, 132);
+            this.bunifuLabel4.Location = new System.Drawing.Point(27, 122);
             this.bunifuLabel4.Name = "bunifuLabel4";
             this.bunifuLabel4.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.bunifuLabel4.Size = new System.Drawing.Size(104, 23);
@@ -1373,7 +1372,7 @@
             this.bunifuLabel3.Cursor = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel3.CursorType = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.bunifuLabel3.Location = new System.Drawing.Point(34, 86);
+            this.bunifuLabel3.Location = new System.Drawing.Point(34, 58);
             this.bunifuLabel3.Name = "bunifuLabel3";
             this.bunifuLabel3.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.bunifuLabel3.Size = new System.Drawing.Size(72, 28);

@@ -8,7 +8,7 @@ namespace quanLyDangKyMonHoc.Model
     public partial class SchoolDbContext : DbContext
     {
         public SchoolDbContext()
-            : base("name=data")
+            : base("name=SchoolDbContext")
         {
         }
 

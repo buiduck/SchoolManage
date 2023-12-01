@@ -1,5 +1,4 @@
-﻿using quanLyDangKySubject.View.Admin;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +14,7 @@ namespace quanLyDangKyMonHoc.View.Admin
     {
         private UcStudentManager ucStudentManager;
         private UcClassManager ucClassManager;
+        private UcSubjectManager ucSubjectManager;
         private UcRegisterSubjectManager ucRegisterSubjectManager;
         public FormHome()
         {
@@ -51,7 +51,31 @@ namespace quanLyDangKyMonHoc.View.Admin
         }
         private void LoadUcAction1()
         {
-            
+
+            if (ucSubjectManager == null)
+            {
+                ucSubjectManager = new UcSubjectManager();
+                {
+                    Dock = DockStyle.Fill;
+                };
+
+                try
+                {
+                    panelMain.Controls.Add(ucSubjectManager);
+                    ucSubjectManager.BringToFront();
+                }
+                catch (Exception ex)
+                {
+                    // Xử lý ngoại lệ ở đây
+                    Console.WriteLine($"Error: {ex.Message}");
+                }
+            }
+            else
+            {
+                ucSubjectManager.BringToFront();
+            }
+
+
         }
         private void LoadUcAction2()
         {
