@@ -84,12 +84,6 @@ namespace quanLyDangKyMonHoc.View.Admin
             }
         }
         
-
-        private void FormHome_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnClassManager_Click_1(object sender, EventArgs e)
         {
             LoadUcAction2();

@@ -70,21 +70,24 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DTO\StudentDTO.cs" />
-    <Compile Include="Model\ADMIN.cs" />
-    <Compile Include="Model\GIANGVIEN.cs" />
-    <Compile Include="Model\LOP.cs" />
-    <Compile Include="Model\LOPHOCPHAN.cs" />
-    <Compile Include="Model\MONHOC.cs" />
-    <Compile Include="Model\NGANH.cs" />
+    <Compile Include="Model\AcademicYear.cs" />
+    <Compile Include="Model\Account.cs" />
+    <Compile Include="Model\Class.cs" />
+    <Compile Include="Model\ClassSchedule.cs" />
+    <Compile Include="Model\Course.cs" />
+    <Compile Include="Model\Major.cs" />
+    <Compile Include="Model\Roles.cs" />
     <Compile Include="Model\SchoolDbContext.cs" />
-    <Compile Include="Model\SINHVIEN.cs" />
-    <Compile Include="Model\sysdiagrams.cs" />
-    <Compile Include="Model\TAIKHOANS.cs" />
+    <Compile Include="Model\SchoolYear.cs" />
+    <Compile Include="Model\Student.cs" />
+    <Compile Include="Model\Subject.cs" />
+    <Compile Include="Model\Teacher.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\ConnectDatabase.cs" />
     <Compile Include="Repository\Implement\StudentRepository.cs" />
     <Compile Include="Repository\Implement\UserRepository.cs" />
+    <Compile Include="Repository\Interface\IBaseRepository.cs" />
     <Compile Include="Repository\Interface\IStudentRepository.cs" />
     <Compile Include="Repository\Interface\IUserRepository.cs" />
     <Compile Include="View\Admin\FormHome.cs">

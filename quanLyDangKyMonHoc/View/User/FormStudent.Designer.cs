@@ -372,7 +372,6 @@
             this.tableChuaDangKy.TabIndex = 4;
             this.tableChuaDangKy.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light;
             this.tableChuaDangKy.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tableChuaDangKy_CellClick);
-            this.tableChuaDangKy.Click += new System.EventHandler(this.tableChuaDangKy_Click);
             // 
             // btnHuyDangKy
             // 
@@ -462,6 +461,7 @@
             this.btnHuyDangKy.TextMarginLeft = 0;
             this.btnHuyDangKy.TextPadding = new System.Windows.Forms.Padding(0);
             this.btnHuyDangKy.UseDefaultRadiusAndThickness = true;
+            this.btnHuyDangKy.Click += new System.EventHandler(this.btnHuyDangKy_Click);
             // 
             // btnDangKy
             // 
@@ -612,6 +612,7 @@
             this.tableDangKy.Size = new System.Drawing.Size(975, 198);
             this.tableDangKy.TabIndex = 5;
             this.tableDangKy.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light;
+            this.tableDangKy.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tableDangKy_CellClick);
             // 
             // ddMonHoc
             // 
@@ -685,7 +686,6 @@
             this.Controls.Add(this.panelMain);
             this.Name = "FormStudent";
             this.Text = "FormStudent";
-           
             this.panelAction.ResumeLayout(false);
             this.panelMain.ResumeLayout(false);
             this.panelMain.PerformLayout();

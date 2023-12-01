@@ -6,26 +6,24 @@ namespace quanLyDangKyMonHoc.Model
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("LOP")]
-    public partial class LOP
+    [Table("SchoolYear")]
+    public partial class SchoolYear
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public LOP()
+        public SchoolYear()
         {
-            SINHVIEN = new HashSet<SINHVIEN>();
+            AcademicYear = new HashSet<AcademicYear>();
         }
 
-        [Key]
-        public int MALOP { get; set; }
+        public int id { get; set; }
 
-        [StringLength(50)]
-        public string TenLop { get; set; }
+        [Column(TypeName = "date")]
+        public DateTime? TimeStart { get; set; }
 
-        public int? MANGANH { get; set; }
-
-        public virtual NGANH NGANH { get; set; }
+        [Column(TypeName = "date")]
+        public DateTime? TimeEnd { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<SINHVIEN> SINHVIEN { get; set; }
+        public virtual ICollection<AcademicYear> AcademicYear { get; set; }
     }
 }
