@@ -35,7 +35,8 @@ namespace quanLyDangKyMonHoc.Model
         [StringLength(50)]
         public string EMAIL { get; set; }
 
-        [StringLength(100)]
+        [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
+        [StringLength(101)]
         public string FullName { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

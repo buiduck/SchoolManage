@@ -9,6 +9,12 @@ namespace quanLyDangKyMonHoc.Model
     [Table("ClassSchedule")]
     public partial class ClassSchedule
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public ClassSchedule()
+        {
+            Student = new HashSet<Student>();
+        }
+
         public int Id { get; set; }
 
         [StringLength(50)]
@@ -29,5 +35,8 @@ namespace quanLyDangKyMonHoc.Model
         public virtual Subject Subject { get; set; }
 
         public virtual Teacher Teacher { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Student> Student { get; set; }
     }
 }

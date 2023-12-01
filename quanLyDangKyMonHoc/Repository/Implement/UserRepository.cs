@@ -1,6 +1,7 @@
 ﻿using BCrypt.Net;
 using quanLyDangKyMonHoc.Model;
 using System;
+using System.Collections.Generic;
 using System.Data.Entity.Migrations;
 using System.Data.SqlClient;
 using System.Linq;
@@ -12,11 +13,11 @@ namespace quanLyDangKyMonHoc.Repository.Implement
     internal class UserRepository : IUserRepository
     {
         private readonly SchoolDbContext schoolDbContext = new SchoolDbContext();
-        public TAIKHOANS Login(string username, string password)
+        public Account Login(string username, string password)
         {
             try
             {
-                var user = schoolDbContext.TAIKHOANS.SingleOrDefault(x => x.username == username);
+                var user = schoolDbContext.Account.SingleOrDefault(x => x.AccountName == username);
 
                 if (user != null)
                 {
@@ -41,11 +42,11 @@ namespace quanLyDangKyMonHoc.Repository.Implement
                 schoolDbContext.Dispose();
             }
         }
-        public bool Register(TAIKHOANS taikhoan)
+        public bool Register(Account taikhoan)
         {
             try
             {
-                schoolDbContext.TAIKHOANS.Add(taikhoan);
+                schoolDbContext.Account.Add(taikhoan);
                 return true;
             }
             catch (Exception ex)
@@ -58,6 +59,21 @@ namespace quanLyDangKyMonHoc.Repository.Implement
                 schoolDbContext.Dispose();
             }
 
+        }
+
+        public IEnumerable<Account> Create(Account entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IEnumerable<Account> Update(Account entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IEnumerable<Account> Delete(int id)
+        {
+            throw new NotImplementedException();
         }
     }
 }

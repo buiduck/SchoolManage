@@ -23,7 +23,7 @@ namespace quanLyDangKyMonHoc.View.User
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
-            var listmonhoc = SchoolDBConText.MONHOC.ToList();
+            var listmonhoc = SchoolDBConText.Subject.ToList();
 
 
             ddMonHoc.DataSource = listmonhoc;
@@ -41,12 +41,12 @@ namespace quanLyDangKyMonHoc.View.User
                 .ToList()
                 .Select(x => new
                 {
-                    x.MALOPHP,
-                    x.TENLOP,
-                    Ten = x.GIANGVIEN.HODEM + " " + x.GIANGVIEN.TEN,
-                    x.MONHOC.SOTIET,
-                    TENMONHOC = x.MONHOC.TENMH,
-                    THOIGIAN =x.NGAYBD+"->"+x.NGAYKT
+                    x.Id,
+                    x.Name,
+                    Ten = x.Teacher.FullName,
+                    x.Subject.CourseCredit,
+                    TENMONHOC = x.Subject.Name,
+                    THOIGIAN =x.DayStart+"->"+x.DayEnd
                 })
                 .ToList();
             tableDangKy.DataSource = listlopdangky; 
@@ -66,23 +66,23 @@ namespace quanLyDangKyMonHoc.View.User
             }
         }
 
-        public IEnumerable<LOPHOCPHAN> getListChuaDangKy(int Masv,int Mamh )
+        public IEnumerable<ClassSchedule> getListChuaDangKy(int Masv,int Mamh )
         {
-            var listlopchuadangky = SchoolDBConText.LOPHOCPHAN
+            var listlopchuadangky = SchoolDBConText.ClassSchedule
                 .Where(x =>
-                    x.SINHVIEN.All(y => y.MASV != Masv)
-                    && x.MAMH == Mamh
-                    && !SchoolDBConText.SINHVIEN.Any(sv => sv.MASV == Masv && sv.LOPHOCPHAN.Any(lhp => lhp.MAMH == Mamh))
+                    x.Student.All(y => y.Id != Masv)
+                    && x.SubjectId == Mamh
+                    && !SchoolDBConText.Student.Any(sv => sv.Id == Masv && sv.ClassSchedules.Any(lhp => lhp.Id == Mamh))
                 );
                 
                
             return listlopchuadangky;
         }
-        public IEnumerable<LOPHOCPHAN> getListDaDangKy(int Masv)
+        public IEnumerable<ClassSchedule> getListDaDangKy(int Masv)
         {
-            var listlopdangky = SchoolDBConText.LOPHOCPHAN
+            var listlopdangky = SchoolDBConText.ClassSchedule
                 .Where(x =>
-                    x.SINHVIEN.Any(y => y.MASV == Masv)
+                    x.Student.Any(y => y.Id == Masv)
                 );
             return listlopdangky;
         }
@@ -92,7 +92,7 @@ namespace quanLyDangKyMonHoc.View.User
             
             //FormLoad();
             if (ddMonHoc.SelectedIndex == -1) return;
-            var maMonHoc = ((MONHOC)ddMonHoc.SelectedItem)?.MAMH ?? 1;
+            var maMonHoc = ((Subject)ddMonHoc.SelectedItem)?.Id ?? 1;
             TaiDanhSachDaDangKy(maMonHoc);
         }
 
@@ -108,13 +108,13 @@ namespace quanLyDangKyMonHoc.View.User
                 .ToList()
                 .Select(x => new
                 {
-                    x.MALOPHP,
-                    x.TENLOP,
-                    Ten = x.GIANGVIEN.HODEM + " " + x.GIANGVIEN.TEN,
-                    x.MONHOC.SOTIET,
-                    Soluong = $"{x.SINHVIEN.Count()}/{x.SOLUONGSV}",
-                    x.NGAYBD,
-                    x.NGAYKT
+                    x.Id,
+                    x.Name,
+                    Ten = x.Teacher.FullName,
+                    x.Subject.Name,
+                    Soluong = $"{x.Student.Count()}/{x.TotalStudent}",
+                    x.DayStart,
+                    x.DayEnd
                 })
                 .ToList();
             tableChuaDangKy.DataSource = listlopchuadangky;
@@ -127,14 +127,14 @@ namespace quanLyDangKyMonHoc.View.User
             int masvToAdd = Masv; // Thay thế bằng giá trị thực của MASV
             int malophpToAdd = MalopSelected ; // Thay thế bằng giá trị thực của MALOPHP
 
-            var sinhVien = SchoolDBConText.SINHVIEN.Find(masvToAdd);
-            var lopHocPhan = SchoolDBConText.LOPHOCPHAN.Find(malophpToAdd);
+            var Student = SchoolDBConText.Student.Find(masvToAdd);
+            var ClassSchedule = SchoolDBConText.ClassSchedule.Find(malophpToAdd);
 
             // Kiểm tra xem sinh viên và lớp học phần có tồn tại không
-            if (sinhVien != null && lopHocPhan != null)
+            if (Student != null && ClassSchedule != null)
             {
                 // Thêm sinh viên vào lớp học phần
-                sinhVien.LOPHOCPHAN.Add(lopHocPhan);
+                Student.ClassSchedules.Add(ClassSchedule);
                 SchoolDBConText.SaveChanges();
                 FormLoad();
             }
@@ -145,30 +145,30 @@ namespace quanLyDangKyMonHoc.View.User
             //int masvToRemove = Masv; // Thay thế bằng giá trị thực của MASV
             //int malophpToRemove = MalopUnSelected; // Thay thế bằng giá trị thực của MALOPHP
 
-            //var sinhVien = SchoolDBConText.SINHVIEN.Find(masvToRemove);
-            //var lopHocPhan = SchoolDBConText.LOPHOCPHAN.Find(malophpToRemove);
+            //var Student = SchoolDBConText.Student.Find(masvToRemove);
+            //var ClassSchedule = SchoolDBConText.ClassSchedule.Find(malophpToRemove);
 
             //// Kiểm tra xem sinh viên và lớp học phần có tồn tại không
-            //if (sinhVien != null && lopHocPhan != null)
+            //if (Student != null && ClassSchedule != null)
             //{
             //    // Thêm sinh viên vào lớp học phần
-            //    sinhVien.LOPHOCPHAN.Remove(lopHocPhan);
+            //    Student.ClassSchedule.Remove(ClassSchedule);
             //    SchoolDBConText.SaveChanges();
             //    FormLoad();
             //}
             int masvToRemove = Masv; // Thay thế bằng giá trị thực của MASV
             int malophpToRemove = MalopUnSelected; // Thay thế bằng giá trị thực của MALOPHP
 
-            var sinhVien = SchoolDBConText.SINHVIEN.Find(masvToRemove);
-            var lopHocPhan = SchoolDBConText.LOPHOCPHAN.Find(malophpToRemove);
+            var Student = SchoolDBConText.Student.Find(masvToRemove);
+            var ClassSchedule = SchoolDBConText.ClassSchedule.Find(malophpToRemove);
 
 
             // Kiểm tra xem sinh viên và lớp học phần có tồn tại không
-            if (sinhVien != null && lopHocPhan != null)
+            if (Student != null && ClassSchedule != null)
             {
                 // Xóa mối quan hệ giữa sinh viên và lớp học phần
-                sinhVien.LOPHOCPHAN.Remove(lopHocPhan);
-                //lopHocPhan.SINHVIEN.Remove(sinhVien);
+                Student.ClassSchedules.Remove(ClassSchedule);
+                //ClassSchedule.Student.Remove(Student);
                 // Lưu thay đổi vào cơ sở dữ liệu
                 SchoolDBConText.SaveChanges();
 
@@ -188,5 +188,12 @@ namespace quanLyDangKyMonHoc.View.User
                 lbtest.Text = cellValue != null ? cellValue.ToString() : string.Empty;
             }
         }
+
+        private void FormStudent_Load(object sender, EventArgs e)
+        {
+
+        }
+
+      
     }
 }
