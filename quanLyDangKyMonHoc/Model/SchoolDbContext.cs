@@ -12,60 +12,87 @@ namespace quanLyDangKyMonHoc.Model
         {
         }
 
-        public virtual DbSet<ADMIN> ADMIN { get; set; }
-        public virtual DbSet<GIANGVIEN> GIANGVIEN { get; set; }
-        public virtual DbSet<LOP> LOP { get; set; }
-        public virtual DbSet<LOPHOCPHAN> LOPHOCPHAN { get; set; }
-        public virtual DbSet<MONHOC> MONHOC { get; set; }
-        public virtual DbSet<NGANH> NGANH { get; set; }
-        public virtual DbSet<SINHVIEN> SINHVIEN { get; set; }
+        public virtual DbSet<AcademicYear> AcademicYear { get; set; }
+        public virtual DbSet<Account> Account { get; set; }
+        public virtual DbSet<Class> Class { get; set; }
+        public virtual DbSet<ClassSchedule> ClassSchedule { get; set; }
+        public virtual DbSet<Course> Course { get; set; }
+        public virtual DbSet<Major> Major { get; set; }
+        public virtual DbSet<Roles> Roles { get; set; }
+        public virtual DbSet<SchoolYear> SchoolYear { get; set; }
+        public virtual DbSet<Student> Student { get; set; }
+        public virtual DbSet<Subject> Subject { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
-        public virtual DbSet<TAIKHOANS> TAIKHOANS { get; set; }
+        public virtual DbSet<Teacher> Teacher { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<ADMIN>()
-                .Property(e => e.email)
+            modelBuilder.Entity<AcademicYear>()
+                .HasMany(e => e.Subject)
+                .WithRequired(e => e.AcademicYear)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<Account>()
+                .Property(e => e.AccountName)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<GIANGVIEN>()
-                .Property(e => e.SDT)
+            modelBuilder.Entity<Account>()
+                .Property(e => e.Password)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<Class>()
+                .HasMany(e => e.Student)
+                .WithRequired(e => e.Class)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<Course>()
+                .HasMany(e => e.Class)
+                .WithRequired(e => e.Course)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<Major>()
+                .HasMany(e => e.Class)
+                .WithRequired(e => e.Major)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<Roles>()
+                .HasMany(e => e.Account)
+                .WithRequired(e => e.Roles)
+                .HasForeignKey(e => e.RoleId)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<Roles>()
+                .HasMany(e => e.Student)
+                .WithRequired(e => e.Roles)
+                .HasForeignKey(e => e.RoleId)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<SchoolYear>()
+                .HasMany(e => e.AcademicYear)
+                .WithRequired(e => e.SchoolYear)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<Student>()
+                .Property(e => e.Email)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<Student>()
+                .Property(e => e.PassWord)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<Subject>()
+                .HasMany(e => e.ClassSchedule)
+                .WithRequired(e => e.Subject)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<Teacher>()
+                .Property(e => e.NumberPhone)
                 .IsFixedLength();
 
-            modelBuilder.Entity<LOPHOCPHAN>()
-                .Property(e => e.NGAYBD)
-                .IsFixedLength();
-
-            modelBuilder.Entity<LOPHOCPHAN>()
-                .Property(e => e.NGAYKT)
-                .IsFixedLength();
-
-            modelBuilder.Entity<LOPHOCPHAN>()
-                .HasMany(e => e.SINHVIEN)
-                .WithMany(e => e.LOPHOCPHAN)
-                .Map(m => m.ToTable("ctLopHocPhanAndSinhVien").MapLeftKey("MALOPHP").MapRightKey("MASV"));
-
-            modelBuilder.Entity<SINHVIEN>()
-                .Property(e => e.EMAIL)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<TAIKHOANS>()
-                .Property(e => e.username)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<TAIKHOANS>()
-                .Property(e => e.password)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<TAIKHOANS>()
-                .HasMany(e => e.ADMIN)
-                .WithOptional(e => e.TAIKHOANS)
-                .HasForeignKey(e => e.taikhoanid);
-
-            modelBuilder.Entity<TAIKHOANS>()
-                .HasMany(e => e.SINHVIEN)
-                .WithOptional(e => e.TAIKHOANS)
-                .HasForeignKey(e => e.TAIKHOANID);
+            modelBuilder.Entity<Teacher>()
+                .HasMany(e => e.ClassSchedule)
+                .WithOptional(e => e.Teacher)
+                .HasForeignKey(e => e.TearcherId);
         }
     }
 }

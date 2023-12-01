@@ -6,37 +6,39 @@ namespace quanLyDangKyMonHoc.Model
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("GIANGVIEN")]
-    public partial class GIANGVIEN
+    [Table("Teacher")]
+    public partial class Teacher
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public GIANGVIEN()
+        public Teacher()
         {
-            LOPHOCPHAN = new HashSet<LOPHOCPHAN>();
+            ClassSchedule = new HashSet<ClassSchedule>();
         }
 
-        [Key]
-        public int MAGV { get; set; }
+        public int id { get; set; }
 
         [StringLength(50)]
-        public string HODEM { get; set; }
+        public string FirstName { get; set; }
 
         [StringLength(50)]
-        public string TEN { get; set; }
+        public string LastName { get; set; }
 
         [Column(TypeName = "date")]
-        public DateTime? NGAYSINH { get; set; }
+        public DateTime? DateOfBirth { get; set; }
 
         [StringLength(50)]
-        public string QUEQUAN { get; set; }
+        public string Address { get; set; }
 
         [StringLength(10)]
-        public string SDT { get; set; }
+        public string NumberPhone { get; set; }
 
         [StringLength(50)]
         public string EMAIL { get; set; }
 
+        [StringLength(100)]
+        public string FullName { get; set; }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<LOPHOCPHAN> LOPHOCPHAN { get; set; }
+        public virtual ICollection<ClassSchedule> ClassSchedule { get; set; }
     }
 }

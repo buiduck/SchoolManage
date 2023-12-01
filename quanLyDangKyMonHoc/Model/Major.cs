@@ -6,27 +6,21 @@ namespace quanLyDangKyMonHoc.Model
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("MONHOC")]
-    public partial class MONHOC
+    [Table("Major")]
+    public partial class Major
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public MONHOC()
+        public Major()
         {
-            LOPHOCPHAN = new HashSet<LOPHOCPHAN>();
+            Class = new HashSet<Class>();
         }
 
-        [Key]
-        public int MAMH { get; set; }
+        public int Id { get; set; }
 
-        [StringLength(30)]
-        public string TENMH { get; set; }
-
-        public int? SOTIET { get; set; }
-
-        [StringLength(30)]
-        public string LOAIMH { get; set; }
+        [StringLength(50)]
+        public string Name { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<LOPHOCPHAN> LOPHOCPHAN { get; set; }
+        public virtual ICollection<Class> Class { get; set; }
     }
 }

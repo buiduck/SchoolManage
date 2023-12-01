@@ -6,29 +6,27 @@ namespace quanLyDangKyMonHoc.Model
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class TAIKHOANS
+    public partial class Roles
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public TAIKHOANS()
+        public Roles()
         {
-            ADMIN = new HashSet<ADMIN>();
-            SINHVIEN = new HashSet<SINHVIEN>();
+            Account = new HashSet<Account>();
+            Student = new HashSet<Student>();
         }
 
-        public int id { get; set; }
+        public int Id { get; set; }
 
-        [StringLength(50)]
-        public string username { get; set; }
+        [Required]
+        [StringLength(30)]
+        public string RoleName { get; set; }
 
-        [StringLength(150)]
-        public string password { get; set; }
-
-        public int? role { get; set; }
+        public int? Level { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ADMIN> ADMIN { get; set; }
+        public virtual ICollection<Account> Account { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<SINHVIEN> SINHVIEN { get; set; }
+        public virtual ICollection<Student> Student { get; set; }
     }
 }

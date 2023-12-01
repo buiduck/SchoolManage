@@ -15,6 +15,10 @@ namespace quanLyDangKyMonHoc.View.User
     public partial class FormStudent : Form
     {
         private SchoolDbContext SchoolDBConText = new SchoolDbContext();
+
+        private int Masv=1;
+        private int MalopSelected;
+        private int MalopUnSelected;
         public FormStudent()
         {
             InitializeComponent();
@@ -41,7 +45,7 @@ namespace quanLyDangKyMonHoc.View.User
                     x.TENLOP,
                     Ten = x.GIANGVIEN.HODEM + " " + x.GIANGVIEN.TEN,
                     x.MONHOC.SOTIET,
-                    Soluong = $"{x.SINHVIEN.Count()}/{x.SOLUONGSV}",
+                    TENMONHOC = x.MONHOC.TENMH,
                     THOIGIAN =x.NGAYBD+"->"+x.NGAYKT
                 })
                 .ToList();
@@ -51,16 +55,13 @@ namespace quanLyDangKyMonHoc.View.User
 
         }
 
-        private void tableChuaDangKy_Click(object sender, EventArgs e)
-        {
-            
-        }
 
         private void tableChuaDangKy_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {
                 object cellValue = tableChuaDangKy.Rows[e.RowIndex].Cells[0].Value;
+                this.MalopSelected = cellValue != null ? (int)cellValue : 0;
                 lbtest.Text = cellValue != null ? cellValue.ToString() : string.Empty;
             }
         }
@@ -71,7 +72,9 @@ namespace quanLyDangKyMonHoc.View.User
                 .Where(x =>
                     x.SINHVIEN.All(y => y.MASV != Masv)
                     && x.MAMH == Mamh
+                    && !SchoolDBConText.SINHVIEN.Any(sv => sv.MASV == Masv && sv.LOPHOCPHAN.Any(lhp => lhp.MAMH == Mamh))
                 );
+                
                
             return listlopchuadangky;
         }
@@ -121,9 +124,69 @@ namespace quanLyDangKyMonHoc.View.User
 
         private void btnDangKy_Click(object sender, EventArgs e)
         {
-            
+            int masvToAdd = Masv; // Thay thế bằng giá trị thực của MASV
+            int malophpToAdd = MalopSelected ; // Thay thế bằng giá trị thực của MALOPHP
+
+            var sinhVien = SchoolDBConText.SINHVIEN.Find(masvToAdd);
+            var lopHocPhan = SchoolDBConText.LOPHOCPHAN.Find(malophpToAdd);
+
+            // Kiểm tra xem sinh viên và lớp học phần có tồn tại không
+            if (sinhVien != null && lopHocPhan != null)
+            {
+                // Thêm sinh viên vào lớp học phần
+                sinhVien.LOPHOCPHAN.Add(lopHocPhan);
+                SchoolDBConText.SaveChanges();
+                FormLoad();
+            }
         }
 
-     
+        private void btnHuyDangKy_Click(object sender, EventArgs e)
+        {
+            //int masvToRemove = Masv; // Thay thế bằng giá trị thực của MASV
+            //int malophpToRemove = MalopUnSelected; // Thay thế bằng giá trị thực của MALOPHP
+
+            //var sinhVien = SchoolDBConText.SINHVIEN.Find(masvToRemove);
+            //var lopHocPhan = SchoolDBConText.LOPHOCPHAN.Find(malophpToRemove);
+
+            //// Kiểm tra xem sinh viên và lớp học phần có tồn tại không
+            //if (sinhVien != null && lopHocPhan != null)
+            //{
+            //    // Thêm sinh viên vào lớp học phần
+            //    sinhVien.LOPHOCPHAN.Remove(lopHocPhan);
+            //    SchoolDBConText.SaveChanges();
+            //    FormLoad();
+            //}
+            int masvToRemove = Masv; // Thay thế bằng giá trị thực của MASV
+            int malophpToRemove = MalopUnSelected; // Thay thế bằng giá trị thực của MALOPHP
+
+            var sinhVien = SchoolDBConText.SINHVIEN.Find(masvToRemove);
+            var lopHocPhan = SchoolDBConText.LOPHOCPHAN.Find(malophpToRemove);
+
+
+            // Kiểm tra xem sinh viên và lớp học phần có tồn tại không
+            if (sinhVien != null && lopHocPhan != null)
+            {
+                // Xóa mối quan hệ giữa sinh viên và lớp học phần
+                sinhVien.LOPHOCPHAN.Remove(lopHocPhan);
+                //lopHocPhan.SINHVIEN.Remove(sinhVien);
+                // Lưu thay đổi vào cơ sở dữ liệu
+                SchoolDBConText.SaveChanges();
+
+                // Tải lại dữ liệu (nếu cần)
+                FormLoad();
+            }
+
+            lbtest.Text = "haha";
+        }
+
+        private void tableDangKy_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            {
+                object cellValue = tableDangKy.Rows[e.RowIndex].Cells[0].Value;
+                this.MalopUnSelected = cellValue != null ? (int)cellValue : 0;
+                lbtest.Text = cellValue != null ? cellValue.ToString() : string.Empty;
+            }
+        }
     }
 }

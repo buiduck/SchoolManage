@@ -6,22 +6,29 @@ namespace quanLyDangKyMonHoc.Model
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("NGANH")]
-    public partial class NGANH
+    [Table("Class")]
+    public partial class Class
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public NGANH()
+        public Class()
         {
-            LOP = new HashSet<LOP>();
+            Student = new HashSet<Student>();
         }
 
-        [Key]
-        public int MANGANH { get; set; }
+        public int Id { get; set; }
 
-        [StringLength(50)]
-        public string TENNGANH { get; set; }
+        [StringLength(40)]
+        public string Name { get; set; }
+
+        public int CourseId { get; set; }
+
+        public int MajorId { get; set; }
+
+        public virtual Course Course { get; set; }
+
+        public virtual Major Major { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<LOP> LOP { get; set; }
+        public virtual ICollection<Student> Student { get; set; }
     }
 }
