@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace quanLyDangKyMonHoc.Repository.Interface
 {
-    internal class IBaseRepository
+     interface IBaseRepository<T>
     {
+
     }
 }

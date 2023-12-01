@@ -12,22 +12,22 @@ namespace quanLyDangKyMonHoc.Repository.Implement
     internal class UserRepository : IUserRepository
     {
         private readonly SchoolDbContext schoolDbContext = new SchoolDbContext();
-        public TAIKHOANS Login(string username, string password)
+        public Account Login(string username, string password)
         {
             try
             {
-                var user = schoolDbContext.TAIKHOANS.SingleOrDefault(x => x.username == username);
+                //var user = schoolDbContext.Account.SingleOrDefault(x => x. == username);
 
-                if (user != null)
-                {
-                    string passHash = user.password;
-                    bool checkLogin = BCrypt.Net.BCrypt.Verify(password, passHash);
+                //if (user != null)
+                //{
+                //    string passHash = user.password;
+                //    bool checkLogin = BCrypt.Net.BCrypt.Verify(password, passHash);
 
-                    if (checkLogin)
-                    {
-                        return user;
-                    }
-                }
+                //    if (checkLogin)
+                //    {
+                //        return user;
+                //    }
+                //}
 
                 return null;
             }
@@ -41,11 +41,11 @@ namespace quanLyDangKyMonHoc.Repository.Implement
                 schoolDbContext.Dispose();
             }
         }
-        public bool Register(TAIKHOANS taikhoan)
+        public bool Register(Account taikhoan)
         {
             try
             {
-                schoolDbContext.TAIKHOANS.Add(taikhoan);
+                schoolDbContext.Account.Add(taikhoan);
                 return true;
             }
             catch (Exception ex)

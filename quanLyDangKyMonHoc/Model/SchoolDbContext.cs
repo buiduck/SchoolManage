@@ -8,7 +8,7 @@ namespace quanLyDangKyMonHoc.Model
     public partial class SchoolDbContext : DbContext
     {
         public SchoolDbContext()
-            : base("name=SchoolDbContext")
+            : base("name=data")
         {
         }
 
@@ -44,6 +44,11 @@ namespace quanLyDangKyMonHoc.Model
                 .HasMany(e => e.Student)
                 .WithRequired(e => e.Class)
                 .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<ClassSchedule>()
+                .HasMany(e => e.Student)
+                .WithMany(e => e.ClassSchedule)
+                .Map(m => m.ToTable("DetailClassSchedule").MapLeftKey("ClassScheduleId").MapRightKey("StudentId"));
 
             modelBuilder.Entity<Course>()
                 .HasMany(e => e.Class)

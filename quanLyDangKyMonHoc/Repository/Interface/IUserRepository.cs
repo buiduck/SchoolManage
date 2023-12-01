@@ -10,7 +10,7 @@ namespace quanLyDangKyMonHoc.Repository
 {
     internal interface IUserRepository : IBaseRepository<Account>
     {
-        TAIKHOANS Login(string username, string password);
+        Account Login(string username, string password);
         
     }
 }

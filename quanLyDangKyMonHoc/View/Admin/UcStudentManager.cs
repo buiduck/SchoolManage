@@ -23,7 +23,7 @@ namespace quanLyDangKyMonHoc.View.Admin
     {
         private IStudentRepository studentRepository;
         private List<StudentDTO> studentDTOList;
-        private List<LOP> listClass;
+        private List<Class> listClass;
         private bool showSetData = false;
         public UcStudentManager()
         {
@@ -54,7 +54,7 @@ namespace quanLyDangKyMonHoc.View.Admin
                 string nameClass = selectedRow.Cells[6].Value.ToString();
                 for (int i = 0; i < listClass.Count; i++)
                 {
-                    if (listClass[i].TenLop.Equals(nameClass))
+                    if (listClass[i].Name.Equals(nameClass))
                     {
                         cbLop.SelectedIndex = i;
                         break;
@@ -68,17 +68,17 @@ namespace quanLyDangKyMonHoc.View.Admin
         {
             if (checkValidation())
             {
-                SINHVIEN sv = new SINHVIEN();
-                sv.MASV = int.Parse(txtMasv.Text);
-                sv.TEN = txtName.Text;
-                sv.HODEM = txtTenSv.Text;
-                sv.QUEQUAN = txtQueQuan.Text;
-                sv.EMAIL = txtEmail.Text;
-                sv.NGAYSINH = dpNgaySinh.Value;
-                LOP lopSelected = cbLop.SelectedItem as LOP;
+                Student sv = new Student();
+                sv.Id = int.Parse(txtMasv.Text);
+                sv.FirstName = txtName.Text;
+                sv.LastName = txtTenSv.Text;
+                sv.Address = txtQueQuan.Text;
+                sv.Email = txtEmail.Text;
+                sv.DateOfBirth = dpNgaySinh.Value;
+                Class lopSelected = cbLop.SelectedItem as Class;
                 if (lopSelected != null)
                 {
-                    sv.MALOP = lopSelected.MALOP;
+                    sv.ClassId = lopSelected.Id;
                 }
                 try
                 {
@@ -86,7 +86,7 @@ namespace quanLyDangKyMonHoc.View.Admin
                 dtTable.DataSource = studentRepository.getListStudentByClassId(getIsClassByNameClass(listClass, cbClassShowView.SelectedItem.ToString()));
                 setEnable(showSetData);
                 setNullDataBoxProperties();
-                    MessageBox.Show($"Cập nhật thông tin thông tin sinh viên MSV-{sv.MASV}!!!", "Thông báo");
+                    MessageBox.Show($"Cập nhật thông tin thông tin sinh viên MSV-{sv.Id}!!!", "Thông báo");
                 }
                 catch(Exception ex)
                 {
@@ -98,8 +98,11 @@ namespace quanLyDangKyMonHoc.View.Admin
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
+            
             string searchContent = txtSearch.Text.ToString();
-
+            List<StudentDTO> listStudentDTO= studentRepository.getListStudentByName(searchContent);
+            addDataToTable(listStudentDTO);
+            
         }
 
 
@@ -112,9 +115,9 @@ namespace quanLyDangKyMonHoc.View.Admin
                 string nameClass = cbClassShowView.SelectedItem.ToString();
                 listClass.ForEach(x =>
                 {
-                    if (x.TenLop.ToString().Equals(nameClass))
+                    if (x.Name.ToString().Equals(nameClass))
                     {
-                        addDataToTable(studentRepository.getListStudentByClassId(x.MALOP));
+                        addDataToTable(studentRepository.getListStudentByClassId(x.Id));
                     }
                 });
 
@@ -165,7 +168,7 @@ namespace quanLyDangKyMonHoc.View.Admin
         {
             List<string> list = new List<string>();
             list.Add("--Vui lòng chọn lớp học--");
-            listClass.ForEach(x => list.Add(x.TenLop.ToString()));
+            listClass.ForEach(x => list.Add(x.Name.ToString()));
             cbClassShowView.DataSource = list;
             listClass = studentRepository.getListClass();
             cbClassShowView.SelectedIndex = 0;
@@ -197,13 +200,13 @@ namespace quanLyDangKyMonHoc.View.Admin
             }
             return listStudentDTO;
         }
-        public int getIsClassByNameClass(List<LOP> listClass, string nameClass)
+        public int getIsClassByNameClass(List<Class> listClass, string nameClass)
         {
-            var foundClass = listClass.FirstOrDefault(x => x.TenLop == nameClass);
+            var foundClass = listClass.FirstOrDefault(x => x.Name == nameClass);
 
             if (foundClass != null)
             {
-                return foundClass.MALOP;
+                return foundClass.Id;
             }
             return 0;
         }

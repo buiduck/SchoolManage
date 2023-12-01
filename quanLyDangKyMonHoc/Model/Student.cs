@@ -9,6 +9,12 @@ namespace quanLyDangKyMonHoc.Model
     [Table("Student")]
     public partial class Student
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Student()
+        {
+            ClassSchedule = new HashSet<ClassSchedule>();
+        }
+
         public int Id { get; set; }
 
         [StringLength(30)]
@@ -31,7 +37,8 @@ namespace quanLyDangKyMonHoc.Model
         [StringLength(150)]
         public string PassWord { get; set; }
 
-        [StringLength(50)]
+        [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
+        [StringLength(61)]
         public string FullName { get; set; }
 
         public int RoleId { get; set; }
@@ -39,5 +46,8 @@ namespace quanLyDangKyMonHoc.Model
         public virtual Class Class { get; set; }
 
         public virtual Roles Roles { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ClassSchedule> ClassSchedule { get; set; }
     }
 }
