@@ -68,7 +68,7 @@ namespace quanLyDangKyMonHoc.View.Admin
         {
             if (checkValidation())
             {
-                SINHVIEN sv = new SINHVIEN();
+                Student sv = new Student();
                 sv.MASV = int.Parse(txtMasv.Text);
                 sv.TEN = txtName.Text;
                 sv.HODEM = txtTenSv.Text;

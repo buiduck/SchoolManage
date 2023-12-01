@@ -78,9 +78,9 @@ namespace quanLyDangKyMonHoc.View.User
                
             return listlopchuadangky;
         }
-        public IEnumerable<LOPHOCPHAN> getListDaDangKy(int Masv)
+        public IEnumerable<ClassSchedule> getListDaDangKy(int Masv)
         {
-            var listlopdangky = SchoolDBConText.LOPHOCPHAN
+            var listlopdangky = SchoolDBConText.ClassSchedule
                 .Where(x =>
                     x.SINHVIEN.Any(y => y.MASV == Masv)
                 );

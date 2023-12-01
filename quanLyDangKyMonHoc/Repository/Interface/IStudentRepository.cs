@@ -11,8 +11,8 @@ namespace quanLyDangKyMonHoc.Repository.Interface
     internal interface IStudentRepository
     {
         List<StudentDTO> getListStudent();
-        List<LOP> getListClass();
-        bool updateStudent(SINHVIEN sinhvien);
+        List<Class> getListClass();
+        bool updateStudent(Student sinhvien);
         List<StudentDTO> getListStudentByClassId(int idClass);
     }
 }

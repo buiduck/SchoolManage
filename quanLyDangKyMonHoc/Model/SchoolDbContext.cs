@@ -45,6 +45,11 @@ namespace quanLyDangKyMonHoc.Model
                 .WithRequired(e => e.Class)
                 .WillCascadeOnDelete(false);
 
+            modelBuilder.Entity<ClassSchedule>()
+                .HasMany(e => e.Student)
+                .WithMany(e => e.ClassSchedule)
+                .Map(m => m.ToTable("DetailClassSchedule").MapLeftKey("ClassScheduleId").MapRightKey("StudentId"));
+
             modelBuilder.Entity<Course>()
                 .HasMany(e => e.Class)
                 .WithRequired(e => e.Course)

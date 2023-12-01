@@ -17,8 +17,9 @@ namespace quanLyDangKyMonHoc.Model
 
         public int SchoolYearId { get; set; }
 
-        [Column("AcademicYear")]
-        public int AcademicYear1 { get; set; }
+        [Required]
+        [StringLength(50)]
+        public string SemesterName { get; set; }
 
         public int Id { get; set; }
 
